@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/vxgplayer-1.8.54.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/vxgplayer-1.8.54.min.js"></script>
+  </head>
+  <body>
+    <div id="page" v-cloak>
+      <div class="head">
+        <div class="headleft">
+          <img
+            src="img/shezhi.png"
+            alt=""
+            style="width: 30px;margin-right: 10px;"
+          />
+          <span>设置</span>
+        </div>
+        <div class="headmidden">
+          <img
+            src="img/logo.png"
+            alt=""
+            style="width: 60px;margin-left: 80px;"
+          />
+          <span>南京市鼓楼区一中心幼儿园</span>
+        </div>
+        <div class="headright">
+          <span class="headright_s1">{{ timer }}</span>
+          <span class="headright_s2">{{ date }}</span>
+          <span class="headright_s3">{{ week }}</span>
+          <img src="img/sun.png" alt="" />
+        </div>
+      </div>
+      <div id="bgban">
+        <div class="ban3d_1">
+          <div class="a_1">
+            <div
+              id="vxg_media_player1"
+              class="monitorVideo vxgplayer"
+              url="rtsp://admin:yaosekeji123@192.168.1.64:554/h264/ch1/main/av_stream"
+              aspect-ratio
+              latency="1"
+              aspect-ratio-mode="2"
+              autostart
+              controls
+              avsync
+              width="600"
+              height="420"
+            ></div>
+          </div>
+        </div>
+        <div class="ban3d_2">
+          <div class="a_center">
+            <div
+              id="vxg_media_player2"
+              class="monitorVideo vxgplayer"
+              url="rtsp://192.168.1.11/user=admin&password=&channel=1&stream=0.sdp"
+              aspect-ratio
+              latency="1"
+              aspect-ratio-mode="2"
+              autostart
+              controls
+              avsync
+              width="700"
+              height="520"
+            ></div>
+          </div>
+          <div class="a_center tips">
+            <div v-if="Stranger.devicename" class="danger">
+              <div
+                class="tipsheadimg"
+                :style='{ backgroundImage:"url("+Stranger.image+")"}'
+              ></div>
+              <!-- <img :src="Stranger.image" alt=""> -->
+              <div class="tipscontent">
+                <span>陌生人</span>
+                <span>{{ Stranger.time }}</span>
+                <span style="text-align: center">{{
+                  Stranger.devicename
+                }}</span>
+              </div>
+            </div>
+            <div v-if="WhiteList.devicename" class="teach">
+              <div
+                class="tipsheadimg"
+                :style='{ backgroundImage:"url("+WhiteList.image+")"}'
+              ></div>
+              <div class="tipscontent">
+                <span>{{ WhiteList.name }}</span>
+                <span>{{ WhiteList.time }}</span>
+                <span style="text-align: center">{{
+                  WhiteList.devicename
+                }}</span>
+              </div>
+            </div>
+            <!-- <div class="teach">
+              <div
+                class="tipsheadimg"></div>
+              <div class="tipscontent">
+                <span></span>
+                <span></span>
+                <span style="text-align: center"></span>
+              </div>
+            </div>
+            <div class="jiazhang" style="display: flex">
+              <div class="tipsheadimg"></div>
+              <div class="tipscontent">
+                <span>教师</span>
+                <span>12:31:31</span>
+                <span>001设备</span>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="ban3d_3">
+          <div class="a_2">
+            <div
+              id="vxg_media_player3"
+              class="monitorVideo vxgplayer"
+              url="rtsp://192.168.1.11/user=admin&password=&channel=1&stream=0.sdp"
+              aspect-ratio
+              latency="1"
+              aspect-ratio-mode="2"
+              autostart
+              controls
+              avsync
+              width="600"
+              height="420"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="bottom_left">
+          <p>家长记录</p>
+          <div class="jilu">
+            <div v-for="parentitems in parentArr" class="jilu_detail">
+              <div
+                class="jiludetail_head"
+                :style='{ backgroundImage:"url("+photourl(parentitems.photo)+")"}'
+              ></div>
+              <div class="juludetail_bottom">
+                <span>{{ parentitems.parentName }}</span>
+                <span>{{ timestampToTime1(parentitems.timestamp) }}</span>
+                <span>{{ parentitems.deviceLocation }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom_left">
+          <p>陌生人记录</p>
+          <div class="jilu">
+            <div v-for="strangeritems in strangerArr" class="jilu_detail">
+              <div
+                class="jiludetail_head"
+                :style='{ backgroundImage:"url("+photourl(strangeritems.photo)+")"}'
+              ></div>
+              <div class="juludetail_bottom">
+                <span>陌生人</span>
+                <span>{{ timestampToTime1(strangeritems.timestamp) }}</span>
+                <span>{{ strangeritems.deviceLocation }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio id="strange" src="img/stranger.mp3"></audio>
+    <audio id="writelist" src="img/qingjin.mp3"></audio>
+  </body>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/vue.js"></script>
+
+  <script>
+    function getNowdate() {
+      var myDate = new Date()
+      var year = myDate.getFullYear() //年
+      var mouth = myDate.getMonth() + 1 //月
+      var day = myDate.getDate() //日
+      var week = myDate.getDay() //周几
+      var h = myDate.getHours() //获取当前小时数(0-23)
+      var m = myDate.getMinutes() //获取当前分钟数(0-59)
+      var s = myDate.getSeconds()
+      if (week == 1) {
+        week = '一'
+      } else if (week == 2) {
+        week = '二'
+      } else if (week == 3) {
+        week = '三'
+      } else if (week == 4) {
+        week = '四'
+      } else if (week == 5) {
+        week = '五'
+      } else if (week == 6) {
+        week = '六'
+      } else if (week == 0) {
+        week = '日'
+      }
+
+      //当前的时间
+      myDate.toLocaleDateString()
+      var mytime = myDate.toLocaleTimeString()
+
+      page.date = year + '/' + mouth + '/' + day
+      page.timer = conver(h) + ':' + conver(m) + ':' + conver(s)
+      page.week = '周' + week
+
+      //日期时间处理
+      function conver(s) {
+        return s < 10 ? '0' + s : s
+      }
+    }
+
+    function websocketfunc(wskurl, name) {
+      console.log(wskurl)
+      var wsk
+      if ('WebSocket' in window) {
+        wsk = new WebSocket(wskurl)
+      } else {
+        alert('Not support websocket')
+      }
+      wsk.onopen = function() {
+        console.log('连接上了')
+      }
+      wsk.onclose = function() {
+        console.log('断线')
+        setTimeout(function() {
+          websocketfunc(wskurl, name)
+        }, 2000)
+      }
+      wsk.onmessage = function(event) {
+        var faceInfo = $.parseJSON(event.data)
+        console.log(faceInfo)
+        if (faceInfo.type == 'recognized') {
+          console.log('白名单')
+          page.WhiteList['image'] = faceInfo.person.src
+          page.WhiteList['name'] = faceInfo.person.name
+          page.WhiteList['devicename'] = name
+          page.WhiteList['time'] = page.timestampToTime(
+            faceInfo.person.timestamp
+          )
+          $('#writelist')[0].play()
+          setTimeout(function() {
+            page.WhiteList = {}
+          }, 3000)
+        } else if (faceInfo.type == 'unrecognized') {
+          console.log('陌生人')
+          page.Stranger['image'] =
+            'data:image/jpeg;base64,' + faceInfo.data.face.image
+          page.Stranger['time'] = page.timestampToTime(faceInfo.data.timestamp)
+          page.Stranger['devicename'] = name
+          $('#strange')[0].play()
+          setTimeout(function() {
+            page.Stranger = {}
+          }, 3000)
+        }
+      }
+    }
+
+    var page = new Vue({
+      el: '#page',
+      data: {
+        date: '',
+        timer: '',
+        week: '',
+        url: [
+          {
+            websocket:
+              'ws://192.168.5.150:9000/video?url=rtsp%3A%2F%2F192.168.5.153%2Fuser%3Dadmin%26password%3D%26channel%3D1%26stream%3D0.sdp%3F',
+            name: '幼儿园闸机入口右'
+          },
+          {
+            websocket:
+              'ws://192.168.5.150:9000/video?url=rtsp%3A%2F%2F192.168.5.151%2Fuser%3Dadmin%26password%3D%26channel%3D1%26stream%3D0.sdp',
+            name: '幼儿园闸机入口左'
+          },
+          {
+            websocket:
+              'ws://192.168.5.150:9000/video?url=rtsp%3A%2F%2F192.168.5.155%2Fuser%3Dadmin%26password%3D%26channel%3D1%26stream%3D0.sdp',
+            name: '幼儿园大门入口抓拍'
+          }
+          // { websocket: '' },
+          // { websocket: '' }
+        ],
+        Stranger: {},
+        WhiteList: {},
+        strangerArr: [],
+        parentArr: []
+      },
+      methods: {
+        startWebsocket() {
+          var that = this
+          for (var i = 0; i < that.url.length; i++) {
+            console.log(that.url[i].websocket)
+            websocketfunc(that.url[i].websocket, that.url[i].name)
+          }
+        },
+        photourl(url) {
+          return 'http://nanjingdaxue.cn:8010/' + url
+        },
+        getData() {
+          var that = this
+          $.ajax({
+            url: 'http://nanjingdaxue.cn:8010/index/lastRecord',
+            data: {},
+            type: 'get',
+            success: function(res) {
+              console.log(res)
+              that.parentArr = res.content.parent
+              that.strangerArr = res.content.stranger
+            }
+          })
+        },
+        timestampToTime(timestamp) {
+          var date = new Date(timestamp * 1000) //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+          var Y = date.getFullYear() + '-'
+          var M =
+            (date.getMonth() + 1 < 10
+              ? '0' + (date.getMonth() + 1)
+              : date.getMonth() + 1) + '-'
+          var D = date.getDate()
+          if (D.toString().length == 1) {
+            D = '0' + D
+          } else if (D.toString().length > 1) {
+            D = D
+          }
+          var h = date.getHours() + ':'
+          var m = date.getMinutes() + ':'
+          // console.log(parseInt(m).length())
+          if (m.length == 2) {
+            m = '0' + m
+          } else if (m.length > 2) {
+            m = m
+          }
+          var s = date.getSeconds()
+          console.log()
+          if (s.toString().length == 1) {
+            s = '0' + s
+          } else if (s.toString().length > 1) {
+            s = s
+          }
+          // return Y + M + D
+          return h + m + s
+        },
+        timestampToTime1(timestamp) {
+          var date = new Date(timestamp) //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+          var Y = date.getFullYear() + '-'
+          var M =
+            (date.getMonth() + 1 < 10
+              ? '0' + (date.getMonth() + 1)
+              : date.getMonth() + 1) + '-'
+          var D = date.getDate()
+          if (D.toString().length == 1) {
+            D = '0' + D
+          } else if (D.toString().length > 1) {
+            D = D
+          }
+          var h = date.getHours() + ':'
+          var m = date.getMinutes() + ':'
+          // console.log(parseInt(m).length())
+          if (m.length == 2) {
+            m = '0' + m
+          } else if (m.length > 2) {
+            m = m
+          }
+          var s = date.getSeconds()
+          console.log()
+          if (s.toString().length == 1) {
+            s = '0' + s
+          } else if (s.toString().length > 1) {
+            s = s
+          }
+          // return Y + M + D
+          return h + m + s
+        }
+      }
+    })
+
+    $(function() {
+      setInterval(function() {
+        getNowdate()
+      }, 1000)
+      // wskInfofunc()
+      page.startWebsocket()
+      page.getData()
+      setInterval(function() {
+        page.getData()
+      }, 5000)
+    })
+
+    //  {
+    //   websocket:
+    //       'ws://192.168.1.50:9000/video?url=rtsp%3A%2F%2Fadmin%3Ayaosekeji123%40192.168.5.153%3A554%2Fh264%2Fch1%2Fmain%2Fav_stream',
+    //       name:''
+    //   },
+    //   {
+    //   websocket:
+    //       'ws://192.168.1.50:9000/video?url=rtsp%3A%2F%2Fadmin%3Ayaosekeji123%40192.168.5.151%3A554%2Fh264%2Fch1%2Fmain%2Fav_stream',
+    //       name:''
+    //   },
+    //   {
+    //   websocket:
+    //       'ws://192.168.1.50:9000/video?url=rtsp%3A%2F%2Fadmin%3Ayaosekeji123%40192.168.5.63%3A554%2Fh264%2Fch1%2Fmain%2Fav_stream',
+    //       name:'幼儿园大门入口抓拍'
+    //   },
+  </script>
+</html>
