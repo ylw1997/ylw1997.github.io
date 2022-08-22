@@ -3,28 +3,28 @@ layout: home
 aside: true
 hero:
   name: YLW BLOG
-  text: "A blog about web development"
-  tagline: just thinking
+  text: "记录前后端学习积累的博客"
+  tagline: just thinking ...
   image:
     src: /logo.png
     alt: VitePress
   actions:
     - theme: brand
-      text: Get Started
+      text: 开始浏览
       link: /start
     - theme: alt
-      text: View on GitHub
-      link: https://github.com/vuejs/vitepress
+      text: 查看源码
+      link: https://gitee.com/yhyYLW/vitepress-blog
 features:
 - icon: ⚡️
-  title: Vite, The DX that can't be beat
-  details: Lorem ipsum...
+  title: 前端技术 
+  details: VUE REACT ANTD UMI VITE JS TS ELECTRON
 - icon: 🖖
-  title: Power of Vue meets Markdown
-  details: Lorem ipsum...
+  title: 后端记录
+  details: JAVA NODEJS SPRINGBOOT EXPRESS MIDWAY
 - icon: 🛠️
-  title: Simple and minimal, always
-  details: Lorem ipsum...
+  title: 其他技术
+  details: DOCKER GIT ANDROID DESKTOP JENKINS
 ---
 
 <script setup>

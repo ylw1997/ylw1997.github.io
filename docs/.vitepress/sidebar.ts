@@ -1,15 +1,15 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-22 10:35:05
- * @LastEditors: YangLiwei
+ * @LastEditTime: 2022-08-22 17:14:34
+ * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\docs\.vitepress\sidebar.ts
  * @Description: 
  */
 export default {
   '/front/': [
     {
-      text: 'VUE',
+      text: 'VUEJS',
       items: [
         {
           text: 'vue',
@@ -23,7 +23,7 @@ export default {
         }
       ]
     },{
-      text: 'REACT',
+      text: 'REACTJS',
       items: [
         {
           text: 'react',
