@@ -6,7 +6,7 @@ hero:
   text: "A blog about web development"
   tagline: just thinking
   image:
-    src: /assets/img/logo.png
+    src: /logo.png
     alt: VitePress
   actions:
     - theme: brand
