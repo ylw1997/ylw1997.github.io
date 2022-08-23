@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-23 17:11:31
+ * @LastEditTime: 2022-08-23 17:39:42
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\docs\.vitepress\sidebar.ts
  * @Description: 
@@ -26,8 +26,8 @@ export default {
           text: 'tsx',
           link: '/front/vue/tsx'
         }, {
-          text: 'vite',
-          link: '/front/vue/vite'
+          text: 'glob',
+          link: '/front/vue/glob'
         }, {
           text: 'library',
           link: '/front/vue/library'
