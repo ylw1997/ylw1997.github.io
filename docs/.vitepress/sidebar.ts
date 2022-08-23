@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-23 11:51:22
+ * @LastEditTime: 2022-08-23 17:11:31
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\docs\.vitepress\sidebar.ts
  * @Description: 
@@ -23,8 +23,8 @@ export default {
       text: 'VUEJS',
       items: [
         {
-          text: 'vue',
-          link: '/front/vue/'
+          text: 'tsx',
+          link: '/front/vue/tsx'
         }, {
           text: 'vite',
           link: '/front/vue/vite'
@@ -47,7 +47,8 @@ export default {
           link: '/front/react/library'
         }
       ]
-    }],
+    }
+  ],
   "/back/": [
     {
       text: 'NODE',
