@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-24 16:22:45
+ * @LastEditTime: 2022-08-24 17:16:05
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -44,6 +44,9 @@ export default {
         {
           text: '暗黑主题切换',
           link: '/front/other/dark'
+        },{
+          text: '项目优化',
+          link: '/front/other/optimization'
         }
       ]
     }
