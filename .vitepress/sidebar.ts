@@ -1,9 +1,9 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-23 17:54:48
+ * @LastEditTime: 2022-08-24 14:02:29
  * @LastEditors: yangliwei 1280426581@qq.com
- * @FilePath: \vitepress-starter\docs\.vitepress\sidebar.ts
+ * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
  */
 export default {
@@ -23,28 +23,23 @@ export default {
       text: 'VUEJS',
       items: [
         {
-          text: 'tsx',
+          text: 'tsx语法',
           link: '/front/vue/tsx'
         }, {
-          text: 'vite glob',
+          text: 'vite动态页面',
           link: '/front/vue/glob'
         }, {
-          text: 'pinia',
+          text: 'pinia状态管理',
           link: '/front/vue/pinia'
         }
       ]
-    },{
-      text: 'REACTJS',
+    }
+    ,{
+      text: '其他',
       items: [
         {
-          text: 'react',
-          link: '/front/react/'
-        }, {
-          text: 'umi',
-          link: '/front/react/umi'
-        }, {
-          text: 'library',
-          link: '/front/react/library'
+          text: '提交验证',
+          link: '/front/other/husky'
         }
       ]
     }
