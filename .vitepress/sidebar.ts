@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-24 14:02:29
+ * @LastEditTime: 2022-08-24 16:22:45
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -40,6 +40,10 @@ export default {
         {
           text: '提交验证',
           link: '/front/other/husky'
+        },
+        {
+          text: '暗黑主题切换',
+          link: '/front/other/dark'
         }
       ]
     }
