@@ -1,7 +1,7 @@
 /*
  * @Author: yangliwei 1280426581@qq.com
  * @Date: 2022-08-19 16:28:44
- * @LastEditTime: 2022-08-23 13:47:36
+ * @LastEditTime: 2022-08-24 09:25:22
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\docs\.vitepress\config.ts
  * Copyright (c) 2022 by yangliwei 1280426581@qq.com, All Rights Reserved. 
@@ -18,7 +18,7 @@ export default {
   lang: 'es',
   ignoreDeadLinks: true,
   lastUpdated: true,
-  outDir: './dist',
+  outDir: '../dist',
   head:[
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
