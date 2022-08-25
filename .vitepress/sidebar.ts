@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-25 10:55:36
+ * @LastEditTime: 2022-08-25 13:20:53
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -31,6 +31,10 @@
         }, {
           text: 'pinia状态管理',
           link: '/front/vue/pinia'
+        },
+        {
+          text:'vite插件',
+          link:'/front/vue/plugin'
         }
       ]
     }
