@@ -1,12 +1,12 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-24 17:16:05
+ * @LastEditTime: 2022-08-25 10:05:16
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
  */
-export default {
+ const a =  {
   "/other/": [
     {
       text: '其他',
@@ -71,3 +71,8 @@ export default {
     }
   ]
 }
+
+console.log(JSON.stringify(a))
+
+export default a;
+

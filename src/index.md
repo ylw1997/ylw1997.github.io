@@ -14,17 +14,17 @@ hero:
       link: /start
     - theme: alt
       text: 查看源码
-      link: https://gitee.com/yhyYLW/vitepress-blog
+      link: https://github.com/ylw1997/ylw1997.github.io.git
 features:
 - icon: ⚡️
   title: 前端技术 
-  details: VUE REACT ANTD UMI VITE JS TS ELECTRON
+  details: VUE,REACT,ANTD,UMI,VITE,JS,TS,ELECTRON
 - icon: 🖖
-  title: 后端记录
-  details: JAVA NODEJS SPRINGBOOT EXPRESS MIDWAY
+  title: 后端技术
+  details: JAVA,NODEJS,SPRINGBOOT,EXPRESS,MIDWAY
 - icon: 🛠️
   title: 其他技术
-  details: DOCKER GIT ANDROID DESKTOP JENKINS
+  details: DOCKER,GIT,ANDROID,DESKTOP,JENKINS
 ---
 
 <script setup>
