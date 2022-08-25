@@ -1,7 +1,7 @@
 /*
  * @Author: yangliwei 1280426581@qq.com
  * @Date: 2022-08-19 16:28:44
- * @LastEditTime: 2022-08-25 10:14:13
+ * @LastEditTime: 2022-08-25 11:36:15
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\config.ts
  * Copyright (c) 2022 by yangliwei 1280426581@qq.com, All Rights Reserved. 
@@ -35,6 +35,15 @@ export default {
       searchParameters: {
         facetFilters: ['version:v3']
       }
-    }
+    },
+    footer: {
+      message: '杨利伟的博客',
+      copyright: '版权所有 © 2022-至今 Yangliwei'
+    },
+    docFooter:{
+      prev: '上一篇',
+      next: '下一篇'
+    },
+    lastUpdatedText:'最后更新于',
   }
 } as UserConfig
