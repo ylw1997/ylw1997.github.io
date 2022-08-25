@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-25 13:48:11
+ * @LastEditTime: 2022-08-25 16:32:06
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -18,6 +18,9 @@
         {
           text:'docker',
           link:'/other/docker'
+        },{
+          text:'nginx',
+          link:'/other/nginx'
         }
       ]
     }
