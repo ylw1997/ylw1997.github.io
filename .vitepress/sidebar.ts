@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-25 13:20:53
+ * @LastEditTime: 2022-08-25 13:48:11
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -14,6 +14,10 @@
         {
           text: 'git',
           link: '/other/git'
+        },
+        {
+          text:'docker',
+          link:'/other/docker'
         }
       ]
     }
