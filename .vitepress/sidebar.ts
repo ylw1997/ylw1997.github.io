@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-25 16:32:06
+ * @LastEditTime: 2022-08-29 14:09:05
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -27,7 +27,7 @@
   ],
   '/front/': [
     {
-      text: 'VUEJS',
+      text: 'VUE',
       items: [
         {
           text: 'tsx语法',
@@ -58,6 +58,15 @@
         },{
           text: '项目优化',
           link: '/front/other/optimization'
+        }
+      ]
+    },
+    {
+      text: 'REACT',
+      items: [
+        {
+          text: 'React和TS',
+          link: '/front/react/ts'
         }
       ]
     }
