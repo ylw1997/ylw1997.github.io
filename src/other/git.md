@@ -103,3 +103,24 @@ git branch -d dev
 ```bash
 git merge dev
 ```
+
+## git 问题解决
+
+### git LF和CRLF
+
+
+:::tip
+
+* crlf 和 lf 是文本换行的不同方式：
+
+* crlf: "\r\n", windows 系统的换行方式
+
+* lf: "\n", Linux 系统的换行方式
+
+在你使用 git 拉取代码的时候，git 会自动将代码当中与你当前系统不同的换行方式转化成你当前系统的换行方式，从而造成这种冲突。
+:::
+
+```bash
+# 修改 git 全局配置，禁止 git 自动将 lf 转换成 crlf
+git config --global core.autocrlf false
+```
