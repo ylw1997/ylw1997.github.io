@@ -6,7 +6,7 @@ hero:
   text: "记录前后端学习积累的博客"
   tagline: just thinking ...
   image:
-    src: /logo.png
+    src: https://s3.bmp.ovh/imgs/2022/08/29/a27bfdff6a2768fd.png
     alt: VitePress
   actions:
     - theme: brand

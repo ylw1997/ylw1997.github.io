@@ -101,4 +101,4 @@ DarkMode(true);
 ```
 
 ## 效果
-<img src="/dark.gif"/>
+![效果](https://s3.bmp.ovh/imgs/2022/08/29/e351f245f37b6a1a.gif)

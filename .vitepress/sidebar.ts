@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-29 14:09:05
+ * @LastEditTime: 2022-08-29 17:00:37
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -12,15 +12,19 @@
       text: '其他',
       items:[
         {
-          text: 'git',
+          text: 'git使用',
           link: '/other/git'
         },
         {
-          text:'docker',
+          text:'docker使用',
           link:'/other/docker'
         },{
-          text:'nginx',
+          text:'nginx配置',
           link:'/other/nginx'
+        },
+        {
+          text:'algolia搜索',
+          link:'/other/algolia'
         }
       ]
     }
