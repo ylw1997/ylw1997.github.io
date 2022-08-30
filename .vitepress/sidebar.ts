@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-29 17:00:37
+ * @LastEditTime: 2022-08-30 16:56:05
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -46,6 +46,10 @@
         {
           text:'vite插件',
           link:'/front/vue/plugin'
+        },
+        {
+          text:"新框架总结",
+          link:"/front/vue/scm"
         }
       ]
     }

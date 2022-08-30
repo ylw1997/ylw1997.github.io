@@ -36,6 +36,37 @@ systemctl status nginx.service
 docker run -itd   --privileged --name myCentos centos /usr/sbin/init
 ```
 
+## yum 没有nginx
+
+```bash
+CentOS8源
+$ vi /etc/yum.repos.d/nginx.repo
+
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/8/$basearch/
+gpgcheck=0
+enabled=1
+
+CentOS7源
+$ vi /etc/yum.repos.d/nginx.repo
+
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/7/$basearch/
+gpgcheck=0
+enabled=1
+
+CentOS6源
+$ vi /etc/yum.repos.d/nginx.repo
+
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/6/$basearch/
+gpgcheck=0
+enabled=1
+```
+
 ## 反向代理
 
 :::tip 反向代理
