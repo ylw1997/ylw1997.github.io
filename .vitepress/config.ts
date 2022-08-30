@@ -1,7 +1,7 @@
 /*
  * @Author: yangliwei 1280426581@qq.com
  * @Date: 2022-08-19 16:28:44
- * @LastEditTime: 2022-08-29 16:16:19
+ * @LastEditTime: 2022-08-30 15:33:44
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\config.ts
  * Copyright (c) 2022 by yangliwei 1280426581@qq.com, All Rights Reserved. 
@@ -26,6 +26,7 @@ export default {
   themeConfig:{
     siteTitle:' blog',
     logo:'/logo-sm.png',
+    socialLinks: [{ icon: "github", link: "https://github.com/ylw1997/ylw1997.github.io" }],
     nav,
     sidebar,
     algolia:{
