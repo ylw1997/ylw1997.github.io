@@ -217,3 +217,51 @@ server {
     return 301 https://$server_name$request_uri;
 }
 ```
+
+## 案例
+
+:::tip 案例
+* 一个前端一个代理后端api
+:::
+
+```bash
+server {
+    listen       80;
+    server_name  localhost;
+
+    location /api/ {
+        # 前端代理到后端api,api一定要写完整路径包括 "/"
+        proxy_pass http://10.1.8.37:18098/;
+        proxy_set_header Host $host;
+    }
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        try_files $uri $uri/ @router;
+        add_header Cache-Control no-cache;
+    }
+
+    location @router {
+        rewrite ^.*$ /index.html last;
+    }
+}
+```
+
+## 问题
+
+### 代理后报502错误
+
+:::tip 问题 
+* 反向代理后访问api一直报502错误
+:::
+
+```bash
+getsebool httpd_can_network_connect
+
+# httpd_can_network_connect --> off
+
+# SELinux配置将httpd网络连接关闭，所以很自然将其启用即可：
+
+setsebool -P httpd_can_network_connect 1
+```
