@@ -218,10 +218,35 @@ server {
 }
 ```
 
+## alias 和 root
+
+:::tip alias 和 root
+
+* alias 和 root 都是用来指定静态资源的目录
+* root与alias主要区别在于nginx如何解释location后面的uri，这会使两者分别以不同的方式将请求映射到服务器文件上。
+* root的处理结果是：root路径＋location路径
+* alias的处理结果是：使用alias路径替换location路径
+:::
+
+```bash{5,11}
+location ^~ /t/ {
+     root /www/root/html/;
+}
+
+# /t/a.html 会映射到 /www/root/html/t/a.html
+
+location ^~ /t/ {
+     alias /www/root/html/;
+}
+
+# /t/a.html 会映射到 /www/root/html/a.html
+
+```
+
 ## 案例
 
 :::tip 案例
-* 一个前端一个代理后端api
+* 一个H5一个后台管理一个代理后端api
 :::
 
 ```bash
@@ -230,17 +255,21 @@ server {
     server_name  localhost;
 
     location /api/ {
-        # 前端代理到后端api,api一定要写完整路径包括 "/"
-        proxy_pass http://10.1.8.37:18098/;
-        proxy_set_header Host $host;
+        proxy_pass http://localhost:18098/;
     }
 
     location / {
-        root   /usr/share/nginx/html;
+        root /usr/share/nginx/html;
         index  index.html index.htm;
         try_files $uri $uri/ @router;
         add_header Cache-Control no-cache;
     }
+
+    location /admin{
+         alias /usr/share/nginx/html/admin;
+         index index.html;
+         try_files $uri $uri/ /admin/index.html;
+     }
 
     location @router {
         rewrite ^.*$ /index.html last;
