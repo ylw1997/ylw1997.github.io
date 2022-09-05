@@ -36,3 +36,19 @@ export const Decrypt = (str: string) => {
 };
 
 ```
+
+## 超长加密
+
+:::tip 前端
+*  超长加密使用 encryptlong 库 ，使用`npm install encryptlong`安装
+* 和原生加密只有一个地方不一样,原生是`decrypt`,这里是`decryptLong`
+*  使用方法如下
+:::
+
+```ts{4}
+export const Encrypt = (str: string) => {
+  const encryptobj = new encrypt();
+  encryptobj.setPublicKey(publicKey);
+  return encryptobj.encryptLong(str);
+};
+```
