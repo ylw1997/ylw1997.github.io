@@ -12,6 +12,19 @@
 - 动态 css
   :::
 
+## 黑暗模式
+
+:::tip 黑暗模式
+* 点击[这里](https://www.yangliwei.top/front/other/dark.html)查看黑暗模式
+:::
+
+
+## 提交验证
+
+:::tip 提交验证
+* 点击[这里](https://www.yangliwei.top/front/other/husky.html)查看提交验证
+:::
+
 ## hooks 应用
 
 ### AJAX 封装
