@@ -45,10 +45,22 @@ export const Decrypt = (str: string) => {
 *  使用方法如下
 :::
 
+:::warning 提示
+* 如果改成decryptLong 还是提示`message too long`，那么就是你的密钥的size可能小了，使用size大一点的重新生成一下密钥
+:::
+
 ```ts{4}
-export const Encrypt = (str: string) => {
+// 加密
+export const EncryptLong = (str: string) => {
   const encryptobj = new encrypt();
   encryptobj.setPublicKey(publicKey);
   return encryptobj.encryptLong(str);
+};
+
+// 解密
+export const DecryptLong = (str: string) => {
+  const decryptobj = new encrypt();
+  decryptobj.setPrivateKey(privateKey);
+  return decryptobj.decryptLong(str);
 };
 ```
