@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-08-30 16:56:05
+ * @LastEditTime: 2022-09-05 10:04:34
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -25,6 +25,10 @@
         {
           text:'algolia搜索',
           link:'/other/algolia'
+        },
+        {
+          text:'加密',
+          link:'/other/encrypt'
         }
       ]
     }
