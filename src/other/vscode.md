@@ -1,9 +1,13 @@
 # vscode 扩展开发
 
+## 扩展地址
+
+
+> 扩展已经上架vscode [点击这里查看](https://marketplace.visualstudio.com/items?itemName=ylw.touchfish)
+
 ## 原因
 
 :::tip 原因
-
 - 学习 vscode 扩展开发方法
 - 编写自己的 vscode 扩展
 - 为了更好的使用 vscode
@@ -13,7 +17,6 @@
 ## 扩展介绍
 
 :::tip 介绍
-
 - 这是一个用来看新闻的扩展
 - 包含 it 之家,快科技,chipHell,财联社四个新闻源的新闻
 - 定时刷新新闻功能
