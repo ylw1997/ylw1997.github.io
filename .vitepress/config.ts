@@ -1,7 +1,7 @@
 /*
  * @Author: yangliwei 1280426581@qq.com
  * @Date: 2022-08-19 16:28:44
- * @LastEditTime: 2022-09-05 15:07:26
+ * @LastEditTime: 2022-09-07 15:24:46
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\config.ts
  * Copyright (c) 2022 by yangliwei 1280426581@qq.com, All Rights Reserved. 
@@ -33,9 +33,9 @@ export default {
     nav,
     sidebar,
     algolia:{
-      indexName: 'blog',
-      appId: 'PJWQBWKA61',
-      apiKey: 'd583955019fcfd82d770661d4f36a8e4',
+      indexName: 'yangliwei',
+      appId: 'IO7XWXF7SS',
+      apiKey: '96eddc6de0f913ef9e004ad7141dddd5',
       searchPagePath: false,
       contextualSearch: false,
       searchParameters: {}
