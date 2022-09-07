@@ -5,6 +5,8 @@
 
 > 扩展已经上架vscode [点击这里查看](https://marketplace.visualstudio.com/items?itemName=ylw.touchfish)
 
+[预览图](https://article.biliimg.com/bfs/article/3528442b93a24d49a6bf9925f34e2ce956403153.png)
+
 ## 原因
 
 :::tip 原因
