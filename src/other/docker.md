@@ -91,6 +91,12 @@ docker exec -it mynginx /bin/bash
 exit
 ```
 
+### 拷贝文件到容器
+
+```bash
+docker cp /Users/xxx/xxx.txt mynginx:/usr/share/nginx/html
+```
+
 ## dockerFile
 
 ### 创建 dockerfile 文件
