@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-09-08 10:43:19
+ * @LastEditTime: 2022-09-09 10:25:22
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -27,16 +27,17 @@
           link:'/other/algolia'
         },
         {
-          text:'RSA加密',
-          link:'/other/encrypt'
+          text:'linux命令',
+          link:'/other/linux'
         },
         {
           text:'vscode插件开发',
           link:'/other/vscode'
         },
+        
         {
-          text:'linux命令',
-          link:'/other/linux'
+          text:'jenkins',
+          link:'/other/jenkins'
         }
       ]
     }
@@ -78,7 +79,11 @@
         },{
           text: '项目优化',
           link: '/front/other/optimization'
-        }
+        },
+        {
+          text:'RSA加密',
+          link:'/front/other/encrypt'
+        },
       ]
     },
     {
