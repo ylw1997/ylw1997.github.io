@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-09-09 10:25:22
+ * @LastEditTime: 2022-09-09 13:12:23
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -34,10 +34,13 @@
           text:'vscode插件开发',
           link:'/other/vscode'
         },
-        
         {
           text:'jenkins',
           link:'/other/jenkins'
+        },
+        {
+          text:'jenkins高级',
+          link:'/other/jenkins_advanced'
         }
       ]
     }

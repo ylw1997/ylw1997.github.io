@@ -54,7 +54,7 @@ docker-compose up -d
 
 ## 1,访问jenkins
 
-> 浏览器打开http://localhost:8080
+> 浏览器打开 `http://localhost:8080`
 
 ![img](https://article.biliimg.com/bfs/article/c6f0fc3de62db66c7e897ae0feebeb359b5a4d7d.png)
 
@@ -242,3 +242,14 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 :::
 
 ![i](https://article.biliimg.com/bfs/article/a245aa1f3b9e4b29b3b701d8cbd66736890b73bd.png)
+
+
+## 注意
+
+:::tip 注意
+* 1, 配置完Maven和JDK以后,jenkins并不会在配置完就安装,而是在第一次运行任务的时候自动安装
+
+* 2,docker-compose是定义和编排docker镜像的工具,通过使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务
+
+* 3,第一次运行任务会需要较长时间用来下载依赖和安装Maven,JDK,第二次以后就会快很多
+:::
