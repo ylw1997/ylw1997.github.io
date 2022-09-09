@@ -104,3 +104,67 @@
 :::
 
 ![i](https://article.biliimg.com/bfs/article/00bab6a852b689f9b80eba7b58419f41bf86518b.png)
+
+## jenkins 版本升级
+
+### 下载jenkins.war
+
+:::tip 下载
+* 进入jenkins ,点击系统管理 ,如果有升级版本,会自动提示,点击下载即可
+* 也可以 直接点 [这里](http://mirrors.jenkins.io/war/latest/jenkins.war) 下载
+:::
+
+### 升级
+
+> 使用root用户访问docker容器
+
+```shell
+docker exec -it -u root myjenkins bin/bash
+
+```
+
+> 进入 /usr/share/jenkins/目录，备份jenkins.war文件
+
+```shell
+cd  /usr/share/jenkins
+mv jenkins.war jenkins.war.bak
+```
+
+> 退出重启jenkins
+
+```shell
+exit
+docker restart myjenkins
+```
+
+### 查看是否成功
+
+> 进入jenkins主页,查看页面底部
+
+![i](https://article.biliimg.com/bfs/article/993efc73e791142ab40f1877cc16dd2f6166f17b.png)
+
+
+## 多POM的MAVEN项目打包
+
+:::tip 多POM的MAVEN项目
+* 在部署spring cloud项目的时候,往往会存在多个pom文件,jenkins可以多次打包,然后部署
+
+* 1,点击进入项目的配置,找到Pre Steps,选择 调用顶层maven目标 选项
+
+* 2,在调用顶层 Maven 目标的Maven版本中选择自己版本
+
+* 3,在目标框中输入 clean install
+
+* 4,在pom框中输入 要运行的pom地址 例如:mall-parent/mall-H5service/pom.xml
+
+:::
+
+![i](https://article.biliimg.com/bfs/article/40d76408b0eeab975d5dd6371c3f5e7316eb3261.png)
+![i](https://article.biliimg.com/bfs/article/c4e36e3da58bd6bf662c4a08107ab5210882f888.png)
+
+:::warning 注意
+* 可以配置多个Pre Steps
+* 最后一个pom项目,必须在项目的 Build 项中配置
+:::
+
+![i](https://article.biliimg.com/bfs/article/0781cf07f761ccedcccc53ef113380fa98f5f38e.png)
