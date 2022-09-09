@@ -168,3 +168,16 @@ docker restart myjenkins
 :::
 
 ![i](https://article.biliimg.com/bfs/article/0781cf07f761ccedcccc53ef113380fa98f5f38e.png)
+
+
+## 清理jenkins 
+
+> 1,可以在设置中设置丢弃旧的构建
+
+![i](https://article.biliimg.com/bfs/article/4987771061496b0129cca15df17498387e44116b.png)
+
+> 2,可以删除工作区文件
+
+![i](https://article.biliimg.com/bfs/article/0c684c5e77a9b6be3b8ec6948fe9a0f97a1353b1.png)
+
+> 3,优化项目配置,例如:打包spring cloud 可以不全局打包,只打包其中几个pom
