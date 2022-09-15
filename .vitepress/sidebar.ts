@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-09-15 10:20:17
+ * @LastEditTime: 2022-09-15 19:46:10
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -99,6 +99,10 @@
         {
           text: 'React和TS',
           link: '/front/react/ts'
+        },
+        {
+          text:'redux使用',
+          link:'/front/react/redux'
         }
       ]
     }
