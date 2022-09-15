@@ -75,20 +75,12 @@ serverName='福利测试服39.106.206.3'
 ROOT_DISK=`df -h|grep /dev/vda1|awk '{print $5}'|cut -d"%" -f1`
 MEM_STATUS=`free -m|grep Mem|awk '{print $3/$2*100}'`
 content="<h1>磁盘使用率超过预警值!</h1>
-    <table>
-    <tr>
-        <td>服务器</td>
-        <td>${serverName}</td>
-    </tr>
-    <tr>
-        <td>磁盘使用率</td>
-        <td>${ROOT_DISK}%</td>
-    </tr>
-    <tr>
-        <td>内存使用率</td>
-        <td>${MEM_STATUS}%</td>
-    </tr>
-    </table>"
+    <hr/>
+    (本邮件是程序自动下发的，请勿回复！)<br/><hr/>
+    服务器名称: $serverName <br/> <hr/>
+    磁盘使用率: $ROOT_DISK% <br/> <hr/>
+    内存使用率: $MEM_STATUS% <br/> <hr/>
+    "
 
 # 如果超过95%则发送邮件
 if [ $ROOT_DISK -ge 95 ];then
