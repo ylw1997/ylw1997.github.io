@@ -54,23 +54,31 @@ crontab -e
 yum install sendmail -y
 ```
 
+## 修改执行权限
+
+```bash
+# 修改执行权限
+chmod 777 mail.sh
+```
+
 ## 编写邮件发送脚本
 
 ```bash
 #!/bin/bash
-account='xxx@qmsznj.com'
+account='dubiao@qmsznj.com'
 password='123'
 to='18305181878@139.com'
 to1='ylw19970206@163.com'
 to2='13913308358@139.com'
-subject='定时任务监控'
-ROOT_DISK=`df -h|grep overlay|awk '{print $5}'|cut -d"%" -f1`
+subject='磁盘内存监控'
+serverName='福利测试服39.106.206.3'
+ROOT_DISK=`df -h|grep /dev/vda1|awk '{print $5}'|cut -d"%" -f1`
 MEM_STATUS=`free -m|grep Mem|awk '{print $3/$2*100}'`
 content="<h1>磁盘使用率超过预警值!</h1>
     <table>
     <tr>
         <td>服务器</td>
-        <td>福利测试前端服务器</td>
+        <td>${serverName}</td>
     </tr>
     <tr>
         <td>磁盘使用率</td>
@@ -86,6 +94,6 @@ content="<h1>磁盘使用率超过预警值!</h1>
 if [ $ROOT_DISK -ge 95 ];then
     sendemail -f $account -t $to $to1 $to2 -o tls=yes -s smtp.exmail.qq.com:587 -u $subject -o message-content-type=html -o message-charset=utf8 -xu $account -xp $password -m $content
 else
-    echo "磁盘空间剩余:${ROOT_DISK}"
+    echo "${serverName}磁盘空间剩余:${ROOT_DISK}"
 fi
 ```
