@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-09-09 13:12:23
+ * @LastEditTime: 2022-09-15 10:20:17
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -29,6 +29,10 @@
         {
           text:'linux命令',
           link:'/other/linux'
+        },
+        {
+          text:'linux磁盘监控',
+          link:'/other/linux-disk'
         },
         {
           text:'vscode插件开发',
