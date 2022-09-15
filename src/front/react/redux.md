@@ -1,4 +1,4 @@
-# redux 使用
+# redux & toolkit 使用
 
 :::tip redux
 * 可以理解为一个状态管理器
