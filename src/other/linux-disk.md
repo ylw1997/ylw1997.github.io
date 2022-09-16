@@ -43,7 +43,7 @@ free -m|grep Mem|awk '{print $3/$2*100}'
 crontab -e
 
 # 添加定时任务
-*/1 * * * * /bin/bash /root/disk.sh
+*/1 * * * * /bin/bash /root/mail.sh
 
 ```
 
