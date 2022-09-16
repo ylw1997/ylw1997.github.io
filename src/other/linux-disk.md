@@ -86,6 +86,6 @@ content="<h1>磁盘使用率超过预警值!</h1>
 if [ $ROOT_DISK -ge 95 ];then
     sendemail -f $account -t $to $to1 $to2 -o tls=yes -s smtp.exmail.qq.com:587 -u $subject -o message-content-type=html -o message-charset=utf8 -xu $account -xp $password -m $content
 else
-    echo "${serverName}磁盘空间剩余:${ROOT_DISK}"
+    echo "${serverName}磁盘空间使用:${ROOT_DISK}"
 fi
 ```
