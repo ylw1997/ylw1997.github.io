@@ -64,14 +64,16 @@ ReactDOM.render(
 
 ```typescript
 // src/features/counter/counterSlice.ts
-import { AnyAction, createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
+import { AnyAction, createAsyncThunk, createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
 
 export interface CounterState {
   count: number;
+  loading: boolean;
 }
 
 const initialState: CounterState = {
   count: 0,
+  loading: false,
 }
 
 export const countSlice = createSlice({
@@ -87,11 +89,21 @@ export const countSlice = createSlice({
     addByCount: (state, action:PayloadAction<number>) => {
       state.count += action.payload
     }
+  },
+  extraReducers: (builder) => {
+    builder
+    .addCase(addAsync.pending, (state) => {
+      state.loading = true;
+    })
+    .addCase(addAsync.fulfilled, (state, action) => {
+      state.count += action.payload;
+      state.loading = false;
+    })
   }
 })
 
 // 异步
-export const incrementAsync = (val: number):any => {
+export const incrementAsync = (val: number) => {
   console.log(val)
   return (dispatch: Dispatch<AnyAction>) => {
     setTimeout(() => {
@@ -99,6 +111,14 @@ export const incrementAsync = (val: number):any => {
     }, 1000)
   } 
 }
+// 异步
+export const addAsync = createAsyncThunk('counter/addAsync', async (val: number) => {
+  return await new Promise<number>((resolve) => {
+    setTimeout(() => {
+      resolve(val)
+    }, 1000)
+  })
+})
 
 export const {increment,decrement,addByCount} = countSlice.actions;
 
@@ -123,24 +143,26 @@ export const store = configureStore({
 // src/App.tsx
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from './store/index';
-import { Button,InputNumber } from 'antd';
-import { addByCount, decrement, increment, incrementAsync } from './store/modules/couter';
-export function Count(){
-  const count = useSelector((state:RootState)=>state.counter.count)
-  const dispatch = useDispatch()
-  const [countValue,setCountValue] = useState(0)
+import { RootState, AppDispatch } from './store/index';
+import { Button, InputNumber, Spin } from 'antd';
+import { addByCount, decrement, increment, incrementAsync, addAsync } from './store/modules/couter';
+export function Count() {
+  const {count,loading} = useSelector((state: RootState) => state.counter)
+  const dispatch:AppDispatch = useDispatch()
+  const [countValue, setCountValue] = useState(0)
   return (
     <div>
-      {count}
+      {loading?<Spin/>:<div>{count}</div>}
+      <br />
+      <Button onClick={() => dispatch(increment())} >增加</Button>
+      <Button onClick={() => dispatch(decrement())}>减少</Button>
+      <br />
+      <InputNumber onChange={(val) => { setCountValue(val) }} value={countValue} ></InputNumber>
+      <Button onClick={() => dispatch(addByCount(countValue))} >提交</Button>
+      <br />
+      <Button onClick={() => dispatch(incrementAsync(countValue))} >异步提交</Button>
       <br/>
-      <Button onClick={()=>dispatch(increment())} >增加</Button>
-      <Button onClick={()=>dispatch(decrement())}>减少</Button>
-      <br/>
-      <InputNumber onChange={(val)=>{setCountValue(val)}} value={countValue} ></InputNumber>
-      <Button onClick={()=>dispatch(addByCount(countValue))} >提交</Button>
-      <br/>
-      <Button onClick={()=>dispatch(incrementAsync(countValue))} >异步提交</Button>
+      <Button onClick={()=>{dispatch(addAsync(countValue))}} >异步提交2</Button>
     </div>
   )
 }
