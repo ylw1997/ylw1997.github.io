@@ -4,7 +4,16 @@
 
 > 这里用docker-compose 部署jenkins,并把jenkins文件夹映射到外部,方便管理
 
-## 安装jenkins
+## docker 安装jenkins
+
+```bash
+# 获取镜像
+docker pull jenkins/jenkins:lts
+# 运行
+docker run -d -p 8080:8080 -p 50000:50000 -v /root/mydocker/jenkins:/var/jenkins_home --name myjenkins jenkins/jenkins:lts
+```
+
+## docker-compose安装jenkins
 
 ### 1,创建文件夹
 
@@ -25,7 +34,7 @@ services:
   docker_jenkins:
     user: root # 使用root用户运行docker
     restart: always # 重启时重新启动
-    image: jenkins/jenkins:latest # 镜像
+    image: jenkins/jenkins:lts # 镜像
     container_name: docker_jenkins # 容器名称
     ports:
       - "8080:8080" # 容器端口映射到主机端口
@@ -253,3 +262,36 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 * 3,第一次运行任务会需要较长时间用来下载依赖和安装Maven,JDK,第二次以后就会快很多
 :::
+
+## 错误处理
+
+### java.net.UnknownHostException: updates.jenkins.io
+
+:::warning 联网错误
+* 如果出现:WARNING	hudson.model.UpdateCenter#updateDefaultSite: Upgrading Jenkins. Failed to update the default Update Site 'default'. Plugin upgrades may fail.
+java.net.UnknownHostException: updates.jenkins.io
+
+可能是jenkins没有联网,有两个方法
+
+1,打开 localhost:8080/pluginManager/advanced 修改 update Site URL 为 http://updates.jenkins.io/update-center.json
+
+2,进入jenkins服务器,修改/etc/resolv.conf 文件,添加 nameserver
+nameserver 8.8.8.8
+nameserver 114.114.114.114
+:::
+
+### No valid crumb was included in request
+
+:::warning 新版本Jenkins的CSRF安全校验的问题
+* 出现No valid crumb was included in request for /pluginManager/installPlugins by admin. Returning 403.
+
+* 进入/jenkins_home/
+
+* 编辑config.xml
+:::
+
+```xml
+<crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>true</excludeClientIPFromCrumb>
+  </crumbIssuer>
+  ```
