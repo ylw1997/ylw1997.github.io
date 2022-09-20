@@ -295,3 +295,14 @@ nameserver 114.114.114.114
     <excludeClientIPFromCrumb>true</excludeClientIPFromCrumb>
   </crumbIssuer>
   ```
+
+### 553 mail from must equal authorized user
+
+:::warning 测试邮件出现553 mail from must equal authorized user
+* 出现553 mail from must equal authorized user
+
+* 在 系统管理（Manage Jenkins）的"系统设置（Configure system）"中"Jenkins Location"添加系统管理员邮件地址（System Admin e-mail address）
+
+* System Admin e-mail address要和邮件服务器的用户名一致
+
+:::
