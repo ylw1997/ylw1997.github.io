@@ -1,7 +1,7 @@
 /*
  * @Author: yangliwei 1280426581@qq.com
  * @Date: 2022-08-19 16:28:44
- * @LastEditTime: 2022-09-07 15:24:46
+ * @LastEditTime: 2022-09-21 14:48:12
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\config.ts
  * Copyright (c) 2022 by yangliwei 1280426581@qq.com, All Rights Reserved. 
@@ -25,6 +25,7 @@ export default {
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
     ['meta', { name: 'keywords', content: 'yangliwei,ylw,ylwblog,ylwblog,vitepress,vitepress-starter' }],
     ['meta',{name:'referrer',content:'no-referrer'}],
+    ['meta',{name:'baidu-site-verification',content:'code-lFJu7SoWOc'}]
   ],
   themeConfig:{
     siteTitle:' blog',
