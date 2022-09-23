@@ -10,7 +10,7 @@
 # 获取镜像
 docker pull jenkins/jenkins:lts
 # 运行
-docker run -d -p 8080:8080 -p 50000:50000 -v /root/mydocker/jenkins:/var/jenkins_home --name myjenkins jenkins/jenkins:lts
+docker run -d -p 8080:8080 -p 50000:50000 -v /root/mydocker/jenkins:/var/jenkins_home --name myjenkins -u root --privileged=true --restart=always jenkins/jenkins:lts
 ```
 
 ## docker-compose安装jenkins
@@ -304,5 +304,18 @@ nameserver 114.114.114.114
 * 在 系统管理（Manage Jenkins）的"系统设置（Configure system）"中"Jenkins Location"添加系统管理员邮件地址（System Admin e-mail address）
 
 * System Admin e-mail address要和邮件服务器的用户名一致
+
+:::
+
+
+### Maven JVM terminated unexpectedly with exit code 137
+
+:::warning Maven JVM terminated unexpectedly with exit code 137
+
+* 有可能是服务器内存不足
+
+* docker update jenkins -m 3g  --memory-swap -1
+
+* 重启服务
 
 :::

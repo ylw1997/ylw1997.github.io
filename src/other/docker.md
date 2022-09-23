@@ -1,35 +1,31 @@
 # docker
 
-## docker 镜像
-
-### 搜索镜像
+## 搜索镜像
 
 ```bash
 docker search nginx
 ```
 
-### 拉取镜像
+## 拉取镜像
 
 ```bash
 docker pull nginx:1.12.1
 ```
 
-### 删除镜像
+## 删除镜像
 
 ```bash
 docker rmi nginx:1.12.1
 ```
 
-### 运行镜像
+## 运行镜像
 
 ```bash
 # -d 后台运行 -p 端口映射
 docker run -d -p 80:80 nginx:1.12.1
 ```
 
-## docker 容器
-
-### 查看容器
+## 查看容器
 
 ```bash
 docker ps -a
@@ -41,7 +37,7 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED              STAT
 
 ```
 
-### 给容器起名字
+## 给容器起名字
 
 ```bash
 docker rename 2267a160b66d mynginx
@@ -51,7 +47,7 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED         STATUS   
 5ef980bacfb0   mysql:8.0.28   "docker-entrypoint.s…"   8 days ago      Exited (137) 18 minutes ago                        docker_mysql
 ```
 
-### 停止容器
+## 停止容器
 
 ```bash
 docker stop mynginx
@@ -59,31 +55,31 @@ docker stop mynginx
 docker stop 2267a160b66d
 ```
 
-### 启动容器
+## 启动容器
 
 ```bash
 docker start mynginx
 ```
 
-### 重启
+## 重启
 
 ```bash
 docker restart mynginx
 ```
 
-### 更新容器自动重启
+## 更新容器自动重启
 
 ```bash
 docker update --restart=always mynginx
 ```
 
-### 查看容器日志
+## 查看容器日志
 
 ```bash
 docker logs mynginx
 ```
 
-### 进入容器
+## 进入容器
 
 ```bash
 docker exec -it mynginx /bin/bash
@@ -91,15 +87,13 @@ docker exec -it mynginx /bin/bash
 exit
 ```
 
-### 拷贝文件到容器
+## 拷贝文件到容器
 
 ```bash
 docker cp /Users/xxx/xxx.txt mynginx:/usr/share/nginx/html
 ```
 
-## dockerFile
-
-### 创建 dockerfile 文件
+## 创建 dockerfile 文件
 
 ```shell
 # Dockerfile
@@ -118,7 +112,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-### docker 命令摘要
+## docker 命令摘要
 
 :::tip 命令摘要
 
@@ -138,7 +132,7 @@ CMD ["nginx", "-g", "daemon off;"]
 - ENTRYPOINT- 容器进入时执行的命令
   :::
 
-### dockerfile 创建镜像
+## dockerfile 创建镜像
 
 ```bash
 # 创建镜像
@@ -163,7 +157,7 @@ Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 
 - 使用 docker-compose up 命令来启动应用程序。
   :::
 
-### docker-compose.yml
+## docker-compose.yml
 
 ```bash
 # 用上面那个 Dockerfile 创建的镜像
@@ -175,7 +169,7 @@ services:
       - "80:80"
 ```
 
-### 启动
+## 启动
 
 ```bash
 docker-compose up -d
@@ -184,21 +178,30 @@ docker-compose up -d
 docker-compose -f .\php.yml up -d
 ```
 
-### 停止
+## 停止
 
 ```bash
 docker-compose down
 ```
 
-### 查看运行状态
+## 查看运行状态
 
 ```bash
 docker-compose ps
 ```
 
-## compose实例
+## 限制内存大小
 
-### mysql compose文件实例
+```bash
+# docker限制内存大小
+docker update jenkins -m 3g  --memory-swap -1
+
+# 命令详解
+--memory 或 -m  限制容器的内存使用量
+--memory-swap  限制内存和 Swap 的总和，不设置的话默认为--memory的两倍
+```
+
+## mysql compose文件实例
 
 ```bash
 version: "3"
@@ -225,7 +228,7 @@ services:
       - D:/docker/mysql/conf:/etc/mysql/conf.d
 ```
 
-### nacos compose文件实例
+## nacos compose文件实例
 
 ```bash
 version: "3"
@@ -288,7 +291,7 @@ networks:
       config:
         - subnet: 172.19.0.0/16
 ```
-### jenkins compose文件实例
+## jenkins compose文件实例
 
 ```bash
 version: '3'
