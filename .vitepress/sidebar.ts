@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-09-20 17:46:40
+ * @LastEditTime: 2022-09-27 17:20:12
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -72,10 +72,29 @@
           link:"/front/vue/scm"
         }
       ]
-    }
-    ,{
+    },{
+      text: 'REACT',
+      items: [
+        {
+          text: 'React和TS',
+          link: '/front/react/ts'
+        },
+        {
+          text:'redux&toolkit',
+          link:'/front/react/redux'
+        },
+        {
+          text:'react router 6',
+          link:'/front/react/router'
+        }
+      ]
+    },{
       text: '其他',
       items: [
+        {
+          text:"vite+ts+vue3 npm包",
+          link:"/front/other/npm"
+        },
         {
           text: '提交验证',
           link: '/front/other/husky'
@@ -90,23 +109,6 @@
         {
           text:'RSA加密',
           link:'/front/other/encrypt'
-        },
-      ]
-    },
-    {
-      text: 'REACT',
-      items: [
-        {
-          text: 'React和TS',
-          link: '/front/react/ts'
-        },
-        {
-          text:'redux&toolkit',
-          link:'/front/react/redux'
-        },
-        {
-          text:'react router 6',
-          link:'/front/react/router'
         }
       ]
     }
