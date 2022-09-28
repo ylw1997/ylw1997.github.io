@@ -1,5 +1,11 @@
 # vite + vue3 + ts 开发npm包
 
+:::tip
+
+* 此组件已经发布到npm,[地址](https://www.npmjs.com/package/profield)
+* Github也已经发布,[地址](https://github.com/ylw1997/vite-npm)
+:::
+
 ## vite创建项目
 
 ```bash
@@ -101,9 +107,9 @@ export default defineConfig({
   "type": "module",
   "main": "./dist/lib.umd.js",
   "module": "./dist/lib.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist/*",
-    "*.d.ts"
+    "dist/*"
   ],
   "exports": {
     ".": {
@@ -115,11 +121,36 @@ export default defineConfig({
 }
 ```
 
+## ts类型
+
+:::tip ts类型
+* vite 有一个专门插件来解决ts类型的问题
+* [vite-plugin-dts](https://github.com/qmhc/vite-plugin-dts)
+* 一款用于在 库模式 中，从 .ts(x) 或 .vue 源文件生成类型文件（.d.ts）的 Vite 插件。
+:::
+
+```bash
+yarn add vite-plugin-dts -D
+```
+
+```ts
+// vite.config.ts
+import dts from 'vite-plugin-dts'
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue(),vueJsx(),dts({
+    outputDir:"dist",
+  })],
+  // ...
+})
+```
+
 ## 打包
 
 ```bash
 yarn build
 ```
+![打包后](https://article.biliimg.com/bfs/article/c019175cea7d90da5ef57cf4ac0a87c917731e23.png)
 
 ## npm 登陆
 
@@ -143,6 +174,12 @@ npm login
 ```bash
 npm publish
 ```
+
+![img](https://article.biliimg.com/bfs/article/1da4f4a4e7d48b24ad74af112955491efe3f5f69.png)
+
+**发布成功,可以在npm官网查看[链接](https://www.npmjs.com/package/profield)**
+
+![img](https://article.biliimg.com/bfs/article/8f62cc540c59cd948f20e118bb903dec4086ee87.png)
 
 ## 安装组件
 
@@ -174,8 +211,15 @@ import { TestBtn } from 'profield'
 </script>
 ```
 
-## ts类型
+> 可以看到组件类型已经被识别了
 
-:::danger ts类型
-还没有实现 
+![img](https://article.biliimg.com/bfs/article/9f8717a2ae39deebc210761eeb8a508d5e7e9bef.png)
+
+
+## 参考
+
+:::tip 参考
+* 感谢这几篇文章
+* [使用Vite和TypeScript带你从零打造一个属于自己的Vue3组件库](https://juejin.cn/post/7117886038126624805)
+* [基于vite + Vue3.2 组件开发 并发布 npm 包](https://blog.csdn.net/weixin_53312997/article/details/126631365)
 :::
