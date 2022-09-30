@@ -2,8 +2,12 @@
 
 :::tip
 
-* 此组件已经发布到npm,[地址](https://www.npmjs.com/package/profield)
-* Github也已经发布,[地址](https://github.com/ylw1997/vite-npm)
+* proField组件已经发布到npm,[地址](https://www.npmjs.com/package/profield)
+
+* proField-editor组件已经发布到npm,[地址](https://www.npmjs.com/package/profield-editor)
+
+* Github也已经发布,[地址](https://github.com/ylw1997/vite-editor)
+
 :::
 
 ## vite创建项目
@@ -151,6 +155,45 @@ export default defineConfig({
 yarn build
 ```
 ![打包后](https://article.biliimg.com/bfs/article/c019175cea7d90da5ef57cf4ac0a87c917731e23.png)
+
+## 减小体积
+
+:::tip 减小体积
+* vite打包后的文件体积比较大
+
+* 可以使用rollupOptions选项中的external和manualChunks来减小体积
+:::
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  plugins: [vue(),vueJsx(),dts({
+    outputDir:"dist",
+  })],
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/index.ts'),
+      name: 'lib',
+      fileName: (format) => `lib.${format}.js`,
+    },
+    rollupOptions: {
+      // 不打包vue和ant-design-vue,减少体积
+      external: ['vue','ant-design-vue'],
+      input: ["src/index.ts"],
+      output: [{
+        format: "es",
+        entryFileNames: '[name].js',
+        dir: 'dist',
+        manualChunks(id){
+          if(id.includes('node_modules')){
+            return 'vendor'
+          }
+        }
+      }],
+    },
+  },
+})
+```
 
 ## npm 登陆
 
