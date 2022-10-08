@@ -29,7 +29,7 @@ git remote add origin https://gitee.com/yhyYLW/234.git
 git remote -v
 ```
 
-## git提交
+## git 提交
 
 ```bash
 git commit -m 'message'
@@ -104,18 +104,32 @@ git branch -d dev
 git merge dev
 ```
 
+### 设置代理
+
+```bash
+git config --global http.proxy http://127.0.0.1:10809
+git config --global https.proxy http://127.0.0.1:10809
+```
+
+### 取消代理
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+
 ## git 问题解决
 
-### git LF和CRLF
-
+### git LF 和 CRLF
 
 :::tip
 
-* crlf 和 lf 是文本换行的不同方式：
+- crlf 和 lf 是文本换行的不同方式：
 
-* crlf: "\r\n", windows 系统的换行方式
+- crlf: "\r\n", windows 系统的换行方式
 
-* lf: "\n", Linux 系统的换行方式
+- lf: "\n", Linux 系统的换行方式
 
 在你使用 git 拉取代码的时候，git 会自动将代码当中与你当前系统不同的换行方式转化成你当前系统的换行方式，从而造成这种冲突。
 :::
@@ -128,9 +142,8 @@ git config --global core.autocrlf false
 ## .gitignore 不生效
 
 :::tip
-.gitignore文件只会在第一次提交项目的时候写入缓存，也就是说如果你第一次提交项目时候忘记写.gitignore文件，后来再补上是没有用的，.gitignore文件是不生效的。因为在缓存中已经标记该项目不存在ignore文件了
+.gitignore 文件只会在第一次提交项目的时候写入缓存，也就是说如果你第一次提交项目时候忘记写.gitignore 文件，后来再补上是没有用的，.gitignore 文件是不生效的。因为在缓存中已经标记该项目不存在 ignore 文件了
 :::
-
 
 ```bash
 # 清除缓存文件
