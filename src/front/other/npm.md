@@ -2,11 +2,9 @@
 
 :::tip
 
-* proField组件已经发布到npm,[地址](https://www.npmjs.com/package/profield)
+* proField组件已经发布到npm,[npm地址](https://www.npmjs.com/package/profield),[github地址](https://github.com/ylw1997/profield)
 
-* proField-editor组件已经发布到npm,[地址](https://www.npmjs.com/package/profield-editor)
-
-* Github也已经发布,[地址](https://github.com/ylw1997/vite-editor)
+* proField-editor组件已经发布到npm,[npm地址](https://www.npmjs.com/package/profield-editor),[github地址](https://github.com/ylw1997/vite-editor)
 
 :::
 
