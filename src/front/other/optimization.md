@@ -224,3 +224,18 @@ return defineConfig({
 打包完成后会在项目根目录生成一个stats.html文件,可以根据图中项目结构来针对优化
 
 <img src="/stats.jpg"/>
+
+## 性能分析
+
+:::tip 性能分析
+* chrome自带的lighthouse性能分析工具
+* 查看chrome的分析报告,找出性能瓶颈
+:::
+
+> 优化前
+
+![img](https://article.biliimg.com/bfs/article/28bc6772c220bfc70ca7e4344acaf5467aa78542.png)
+
+> 优化后
+
+![img](https://article.biliimg.com/bfs/article/573836cf9013d826c1ea3296d203bbd573ae0599.png)
