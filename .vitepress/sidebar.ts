@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-10-13 13:45:23
+ * @LastEditTime: 2022-10-13 15:08:31
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -39,7 +39,7 @@
           link:'/other/vscode'
         },
         {
-          text:'jenkins',
+          text:'jenkins基础',
           link:'/other/jenkins'
         },
         {
@@ -47,11 +47,11 @@
           link:'/other/jenkins_advanced'
         },
         {
-          text:'wsl',
+          text:'wsl配置',
           link:'/other/wsl'
         },
         {
-          text:'sentry',
+          text:'sentry错误监控',
           link:'/other/sentry'
         }
       ]
