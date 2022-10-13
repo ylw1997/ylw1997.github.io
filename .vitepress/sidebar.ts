@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-09-27 17:20:12
+ * @LastEditTime: 2022-10-13 13:45:23
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -45,6 +45,14 @@
         {
           text:'jenkins高级',
           link:'/other/jenkins_advanced'
+        },
+        {
+          text:'wsl',
+          link:'/other/wsl'
+        },
+        {
+          text:'sentry',
+          link:'/other/sentry'
         }
       ]
     }
