@@ -157,6 +157,55 @@ export const DarkMode = async (isDark: boolean) => {
 };
 ```
 
+## 动态加载组件
+
+:::tip 动态加载组件
+* 优点: 在运行时是懒加载,减少启动时间
+* [文档](https://cn.vuejs.org/api/general.html#defineasynccomponent)
+:::
+
+```ts
+const goodsDetail = defineAsyncComponent(
+  () => import("./components/goodsDetail.vue")
+);
+```
+
+## 产物分块
+
+:::tip 产物分块
+* 优点: 减少首屏加载时间,减少包数量,减少包大小
+* [文档](https://cn.vitejs.dev/guide/build.html#chunking-strategy)
+:::
+
+```ts
+export default {
+  ...
+  build: {
+      sourcemap: true,
+      outDir: "scm",
+      chunkSizeWarningLimit: 1000,
+      rollupOptions: {
+        output: {
+          // 产物分块
+          manualChunks: {
+            vue: ["vue"],
+            lodash: ["lodash-es"],
+            antd: ["ant-design-vue"],
+            icon: ["@ant-design/icons-vue"],
+          },
+        },
+      },
+    },
+}
+```
+
+## 代码组件代码封装npm包
+
+:::tip 代码组件代码封装npm包
+* 把一些公共的代码提取出来,放到 npm 包中,减少打包大小,减少重复代码,提高开发效率
+* [文档](https://cn.vitejs.dev/config/build-options.html#build-lib)
+:::
+
 ## 查看打包文件结构图
 安装
 
