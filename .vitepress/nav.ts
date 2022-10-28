@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:38:06
- * @LastEditTime: 2022-10-28 10:53:49
+ * @LastEditTime: 2022-10-28 11:37:35
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\nav.ts
  * @Description: 导航
@@ -16,5 +16,5 @@ export default [
     link: '/other/git'
   }, {
     text: 'proField',
-    link: '/proField/README'
+    link: '/profield/README'
   }, { text: '后端', link: '/back/nodejs/' },] 

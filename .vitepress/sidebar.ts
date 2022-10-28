@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-10-28 11:18:08
+ * @LastEditTime: 2022-10-28 11:41:58
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -140,28 +140,28 @@
       ]
     }
   ],
-  "/proField/": [
+  "/profield/": [
     {
-      text: 'proField',
+      text: 'profield',
       items:[
         {
-          text: 'README',
-          link: '/proField/README'
+          text: '介绍',
+          link: '/profield/README'
         },{
-          text: 'proField',
-          link: '/proField/proField'
+          text: 'profield',
+          link: '/profield/proField'
         },{
           text: 'proForm',
-          link: '/proField/proForm'
+          link: '/profield/proForm'
         },{
           text: 'proTable',
-          link: '/proField/proTable'
+          link: '/profield/proTable'
         },{
           text:"proPanel",
-          link:"/proField/proPanel"
+          link:"/profield/proPanel"
         },{
           text:"lookField",
-          link:"/proField/lookField"
+          link:"/profield/lookField"
         }
       ]
     },{
@@ -169,23 +169,23 @@
       items:[
         {
           text: 'useAjax',
-          link: '/proField/useAjax'
+          link: '/profield/useAjax'
         },
         {
           text: 'useTable',
-          link: '/proField/useTable'
+          link: '/profield/useTable'
         },
         {
           text: 'useModel',
-          link: '/proField/useModel'
+          link: '/profield/useModel'
         },
         {
           text: 'usePage',
-          link: '/proField/usePage'
+          link: '/profield/usePage'
         },
         {
           text: 'useForm',
-          link: '/proField/useForm'
+          link: '/profield/useForm'
         }
       ]
     },{
@@ -193,7 +193,7 @@
       items:[
         {
           text:'types',
-          link:'/proField/types'
+          link:'/profield/types'
         }
       ]
     }
