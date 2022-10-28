@@ -2,6 +2,8 @@
 
 <img src="https://article.biliimg.com/bfs/article/b2fca8e0d573c6c4b23f8dbefc656b3bb845a6f8.png" width="200" style="display: block;margin: 0 auto;">
 
+- npm: [profield](https://www.npmjs.com/package/profield)
+
 - github: [profield](https://github.com/ylw1997/profield)
 
 - proField 是一系列基于 ant design vue 的 组件库
