@@ -14,6 +14,15 @@
 
 - 富文本编辑器封装: [profield-editor](https://www.npmjs.com/package/profield-editor)
 
+## 实例
+
+<iframe src="https://codesandbox.io/embed/profield-7k8f4x?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="profield"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ## 内置组件
 
 - `proField` 组件，统一 proForm,proTable 的字段 [proField](./proField.md)。
@@ -57,5 +66,9 @@ npm install profield
 ## 在项目中使用
 
 ```js
+// main.ts 引入antd样式
+import 'ant-design-vue/dist/antd.css';
+
+// 页面组件 引入proField
 import { columnItem, proTable, proForm, usePage, useModel } from "profield";
 ```
