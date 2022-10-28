@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-10-13 15:08:31
+ * @LastEditTime: 2022-10-28 11:18:08
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -136,6 +136,64 @@
         {
           text: 'java',
           link: '/back/java/'
+        }
+      ]
+    }
+  ],
+  "/proField/": [
+    {
+      text: 'proField',
+      items:[
+        {
+          text: 'README',
+          link: '/proField/README'
+        },{
+          text: 'proField',
+          link: '/proField/proField'
+        },{
+          text: 'proForm',
+          link: '/proField/proForm'
+        },{
+          text: 'proTable',
+          link: '/proField/proTable'
+        },{
+          text:"proPanel",
+          link:"/proField/proPanel"
+        },{
+          text:"lookField",
+          link:"/proField/lookField"
+        }
+      ]
+    },{
+      text: 'hooks',
+      items:[
+        {
+          text: 'useAjax',
+          link: '/proField/useAjax'
+        },
+        {
+          text: 'useTable',
+          link: '/proField/useTable'
+        },
+        {
+          text: 'useModel',
+          link: '/proField/useModel'
+        },
+        {
+          text: 'usePage',
+          link: '/proField/usePage'
+        },
+        {
+          text: 'useForm',
+          link: '/proField/useForm'
+        }
+      ]
+    },{
+      text: 'types',
+      items:[
+        {
+          text:'types',
+          link:'/proField/types'
         }
       ]
     }
