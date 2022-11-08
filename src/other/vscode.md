@@ -2,7 +2,6 @@
 
 ## 扩展地址
 
-
 > 扩展已经上架vscode [点击这里查看](https://marketplace.visualstudio.com/items?itemName=ylw.touchfish)
 
 ![预览图](https://article.biliimg.com/bfs/article/3528442b93a24d49a6bf9925f34e2ce956403153.png)
@@ -10,6 +9,7 @@
 ## 原因
 
 :::tip 原因
+
 - 学习 vscode 扩展开发方法
 - 编写自己的 vscode 扩展
 - 为了更好的使用 vscode
@@ -19,6 +19,7 @@
 ## 扩展介绍
 
 :::tip 介绍
+
 - 这是一个用来看新闻的扩展
 - 包含 it 之家,快科技,chipHell,财联社四个新闻源的新闻
 - 定时刷新新闻功能
@@ -57,9 +58,10 @@
 - 扩展文档 [点击这里](https://code.visualstudio.com/api/extension-guides/tree-view)
   :::
 
-### 1,在 package.json 里面添加一个视图
+## 1,添加视图
 
 ```json
+// package.json
 {
   "activationEvents": ["onView:view.newsList"],
   "contributes": {
@@ -75,7 +77,7 @@
 }
 ```
 
-### 2,新建一个生成新闻的类
+## 2,新建一个生成新闻的类
 
 ```typescript
 import {
@@ -122,17 +124,18 @@ export class ItHomeProvider implements TreeDataProvider<TreeItem> {
 }
 ```
 
-### 3,在 extension.ts 里面注册视图
+## 3,注册视图
 
 ```typescript
+// extension.ts
 export function activate(context: vscode.ExtensionContext) {
-	// 注册树列表提供者,需要在json文件中注册(activationEvents)
-	const newsProvider = new ItHomeProvider();
-	vscode.window.registerTreeDataProvider("view.newsList", newsProvider);
+ // 注册树列表提供者,需要在json文件中注册(activationEvents)
+ const newsProvider = new ItHomeProvider();
+ vscode.window.registerTreeDataProvider("view.newsList", newsProvider);
 }
 ```
 
-### 4,编写刷新新闻的命令
+## 4,编写刷新新闻的命令
 
 ```typescript
 /**
@@ -148,7 +151,9 @@ export const refresh = (newsProvider:ItHomeProvider)=>{
   });
 };
 ```
-### 5,编写打开新闻的命令
+
+## 5,编写打开新闻的命令
+
 ```typescript
 
 /**
@@ -198,9 +203,10 @@ export const openUrl = vscode.commands.registerCommand('itHome.openUrl', async (
 
 ```
 
-### 6,注册刷新和打开新闻的命令
+## 6,注册刷新和打开新闻的命令
 
 ```typescript
+// extension.ts
 export function activate(context: vscode.ExtensionContext) {
   // 注册刷新新闻的命令
   context.subscriptions.push(refresh(newsProvider));
@@ -209,9 +215,10 @@ export function activate(context: vscode.ExtensionContext) {
 }
 ```
 
-### 7,在 package.json 里面添加命令
+## 7,注册命令
 
 ```json
+// package.json
 {
   "activationEvents": ["onView:view.newsList"],
   "contributes": {
@@ -236,11 +243,14 @@ export function activate(context: vscode.ExtensionContext) {
   }
 }
 ```
-### 8,注册vscode侧边栏按钮
+
+## 8,注册侧边栏按钮
 
 :::tip 侧边按钮
-* vscode侧边栏按钮的注册需要在package.json里面注册
-* 可以直接显示在vscode的侧边栏,更加方便
+
+- vscode侧边栏按钮的注册需要在package.json里面注册
+- 可以直接显示在vscode的侧边栏,更加方便
+
 :::
 
 ```json
@@ -250,44 +260,47 @@ export function activate(context: vscode.ExtensionContext) {
     ...,
     "viewsContainers": {
       "activitybar": [
-				{
-					"id": "touchfish",
-					"title": "TouchFish",
-					"icon": "assets/training.svg"
-				}
-			]
+    {
+     "id": "touchfish",
+     "title": "TouchFish",
+     "icon": "assets/training.svg"
+    }
+   ]
     }
   }
 }
 ```
 
-### 9,编写一个欢迎页面,可以打开当前扩展的设置页面
+## 9,欢迎页面
+
+> 可以打开当前扩展的设置页面
 
 ```json
 
 {
   "views": {
-			"touchfish": [
-				{
-					"name": "新闻",
-					"id": "view.newsList"
-				},
-				{
-					"id": "view.setting",
-					"name": "设置",
-					"visibility": "hidden"
-				}
-			]
-		},
-		"viewsWelcome": [
-			{
-				"view":"view.setting",
-				"contents": "[🛠打开配置页](command:touchfish.openConfigPage) \n 停止内卷,享受摸鱼!欢迎使用摸鱼小工具!😘😘😘😘😘😘😘😘"
-			}			
-		],
+   "touchfish": [
+    {
+     "name": "新闻",
+     "id": "view.newsList"
+    },
+    {
+     "id": "view.setting",
+     "name": "设置",
+     "visibility": "hidden"
+    }
+   ]
+  },
+  "viewsWelcome": [
+   {
+    "view":"view.setting",
+    "contents": "[🛠打开配置页](command:touchfish.openConfigPage) \n 停止内卷,享受摸鱼!欢迎使用摸鱼小工具!😘😘😘😘😘😘😘😘"
+   }   
+  ],
 }
 
 ```
+
 注册点击事件
 
 ```typescript
@@ -300,7 +313,7 @@ context.subscriptions.push(openSetting);
 }
 ```
 
-### 10,打包发布
+## 10,打包
 
 1,修改package.json里面的version
 
@@ -311,20 +324,19 @@ npm install -g vsce
 vsce package
 ```
 
-### 11,发布到vscode插件市场
+## 11,发布
 
 :::tip
-* vscode扩展上传[文档](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
 
-* 1,到 [devops](https://ylw1280426581.visualstudio.com/_usersSettings/tokens)创建一个access token,
+- vscode扩展上传[文档](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
+
+- 1,到 [devops](https://ylw1280426581.visualstudio.com/_usersSettings/tokens)创建一个access token,
 必须
 
-* 2,创建扩展市场的账号,[点击这里](https://marketplace.visualstudio.com/manage)
+- 2,创建扩展市场的账号,[点击这里](https://marketplace.visualstudio.com/manage)
 
 :::
-
 
 ```bash
 vsce publish
 ```
-
