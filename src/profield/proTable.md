@@ -43,6 +43,7 @@ import { proTable } from "profield";
   </template>
 </proTable>
 ```
+
 ## API
 
 >内置所有 ant design vue table 的属性,[文档](https://antdv.com/components/table-cn)
@@ -81,3 +82,4 @@ import { proTable } from "profield";
 |tab|tab栏插槽|
 |bodyCell|表格内容插槽|
 |expandedRowRender|展开行插槽|
+|columnSelectTitleRight|列选择标题右侧插槽|

@@ -33,7 +33,6 @@ const { ajaxFunc, loading } = useAJAX({
 |loading|请求状态|boolean|
 |data|请求数据|any|
 
-
 # useAJAXSim Hook
 
 * useAJAXSim 用来模拟请求，返回一个对象，包含请求状态、数据、错误信息等,是useAjax的简化版

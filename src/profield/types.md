@@ -1,4 +1,4 @@
-# types 
+# types
 
 ## ColumnItem
 
@@ -24,6 +24,9 @@ columnItem 是表格字段定义接口类型
 | cascaderKeyArray | 级联选择后的对应字段 | `string[]` |
 | slot | 插槽名称 | `string` |
 | tips | 提示信息 | `string` |
+| isArray | 是否是数组 | `boolean` |
+| disabled | 是否禁用 | `boolean` |
+| disabledFunc | 是否禁用的函数 | `(formModel: any) => boolean` |
 | [str: string] |  | `any` |
 
 ```ts
@@ -46,6 +49,9 @@ export interface columnItem extends ColumnType {
   cascaderKeyArray?: string[]; //级联选择后的对应字段
   slot?: string; //插槽名称
   tips?: string; //提示信息
+  isArray?: boolean; //是否是数组
+  disabled?: boolean; //是否禁用
+  disabledFunc?: (formModel: any) => boolean; //是否禁用的函数
   [str: string]: any;
 }
 ```
