@@ -23,6 +23,10 @@
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
+## 独立组件
+
+- `profield-editor` 组件，基于wangEditor的vue3富文本编辑器组件 [profield-editor](https://www.npmjs.com/package/profield-editor)
+
 ## 内置组件
 
 - `proField` 组件，统一 proForm,proTable 的字段 [proField](./proField.md)。

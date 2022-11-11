@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-10-28 11:41:58
+ * @LastEditTime: 2022-11-11 09:34:32
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -147,8 +147,12 @@
         {
           text: '介绍',
           link: '/profield/README'
+        }
+        ,{
+          text: 'proEditor',
+          link: '/profield/proEditor'
         },{
-          text: 'profield',
+          text: 'proField',
           link: '/profield/proField'
         },{
           text: 'proForm',
