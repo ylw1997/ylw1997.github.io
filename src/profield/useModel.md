@@ -7,7 +7,7 @@
 ```js
 import { useModel } from "profield";
 
-const { visible, modelData, add, edit } = useModel(columns.value);
+const { visible, modelData, add, edit,look } = useModel(columns.value);
 ```
 
 ## 参数
@@ -16,13 +16,12 @@ const { visible, modelData, add, edit } = useModel(columns.value);
 | ------- | ------ | ------- | ------ |
 | columns | 表格列 | `columnItem[]` | -      |
 
-
 ## 返回值
 
 | 参数       | 说明             | 类型       |
 | ---------- | ---------------- | ---------- |
 |visible|弹窗和抽屉的显示状态|`Boolean`|
 |modelData|弹窗和抽屉的数据|`Object`|
-|add|添加事件|`Function`|
-|edit|编辑事件|`Function`|
-
+|add|添加事件|`(params?: any) => void`|
+|edit|编辑事件|`(record: {[text: string]: any}) => void`|
+|look|查看事件|`(record: {[text: string]: any}) => void`|

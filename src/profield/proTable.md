@@ -63,6 +63,7 @@ import { proTable } from "profield";
 |rowClassName|自定义行类名|`Function(record, index):string`|`null`|
 |customSize|自定义表格大小|`'small'` \| `'middle'` \| `'large'`|`'middle'`|
 |defaultExpandAllRows|默认展开所有行|`boolean`|`false`|
+|selectType|表格选中类型|`'checkbox'` \| `'radio'`|`'checkbox'`|
 
 ## 事件
 
