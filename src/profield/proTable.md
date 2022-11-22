@@ -64,6 +64,7 @@ import { proTable } from "profield";
 |customSize|自定义表格大小|`'small'` \| `'middle'` \| `'large'`|`'middle'`|
 |defaultExpandAllRows|默认展开所有行|`boolean`|`false`|
 |selectType|表格选中类型|`'checkbox'` \| `'radio'`|`'checkbox'`|
+|defaultFieldWidth|默认搜索栏宽度|`number`|`100`|
 
 ## 事件
 

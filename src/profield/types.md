@@ -27,6 +27,8 @@ columnItem 是表格字段定义接口类型
 | isArray | 是否是数组 | `boolean` |
 | disabled | 是否禁用 | `boolean` |
 | disabledFunc | 是否禁用的函数 | `(formModel: any) => boolean` |
+|showField | 显示在表格的字段名称 | `string` |
+|width | 表格列宽 | `number|string` |
 | [str: string] |  | `any` |
 
 ```ts
