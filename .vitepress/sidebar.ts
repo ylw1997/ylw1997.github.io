@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-11-11 09:34:32
+ * @LastEditTime: 2022-12-06 11:45:14
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -21,6 +21,10 @@
         },{
           text:'nginx配置',
           link:'/other/nginx'
+        },
+        {
+          text:'编译安装nginx',
+          link:'/other/openEuler'
         },
         {
           text:'algolia搜索',
@@ -53,7 +57,8 @@
         {
           text:'sentry错误监控',
           link:'/other/sentry'
-        }
+        },
+        
       ]
     }
   ],

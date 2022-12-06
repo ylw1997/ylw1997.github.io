@@ -11,7 +11,7 @@ yum install -y nginx
 解决方法:运行以下命令
 
 也可以按照阿里云文档操作:
-https://developer.aliyun.com/mirror/centos?spm=a2c6h.13651102.0.0.3e221b11mKWxVs
+<https://developer.aliyun.com/mirror/centos?spm=a2c6h.13651102.0.0.3e221b11mKWxVs>
 :::
 
 ```bash
@@ -115,6 +115,7 @@ GZIP 是一种压缩算法，它可以在传输过程中加速数据的传输。
 
 :::tip 负载均衡
 负载均衡是一种让多个服务器上的资源随机分配的方式。
+
 * 负载均衡默认是轮询的方式
 * ip_hash 方式，根据客户端的 ip 地址来分配 (通过客户端请求ip进行hash，再通过hash值选择后端server)
 * fair 方式，根据服务器的响应时间来分配 (响应时间短的优先分配)
@@ -124,7 +125,7 @@ GZIP 是一种压缩算法，它可以在传输过程中加速数据的传输。
 ```bash
 http {
   upstream myserver {
-  	# ip_hash;  # ip_hash 方式
+   # ip_hash;  # ip_hash 方式
     # fair;   # fair 方式
     server 127.0.0.1:8081;  # 负载均衡目的服务地址
     server 127.0.0.1:8080;
@@ -133,7 +134,7 @@ http {
 
   server {
     location / {
-    	proxy_pass http://myserver;
+     proxy_pass http://myserver;
       proxy_connect_timeout 10;
     }
   }
@@ -194,7 +195,7 @@ server {
   charset utf-8;    # 防止中文文件名乱码
 
   location /upload {
-    alias	          /usr/share/nginx/html/static;  # 静态资源目录
+    alias           /usr/share/nginx/html/static;  # 静态资源目录
     autoindex               on;    # 开启静态资源列目录
     autoindex_exact_size    off;   # on(默认)显示文件的确切大小，单位是byte；off显示文件大概大小，单位KB、MB、GB
     autoindex_localtime     off;   # off(默认)时显示的文件时间为GMT时间；on显示的文件时间为服务器时间
@@ -211,7 +212,9 @@ server {
         rewrite ^(.*)$ https://${server_name}$1 permanent;
     }
 ```
+
 或者
+
 ```bash
 server {
     listen      80;
@@ -250,6 +253,7 @@ location ^~ /t/ {
 ## 案例
 
 :::tip 案例
+
 * 一个H5一个后台管理一个代理后端api
 :::
 
@@ -285,7 +289,8 @@ server {
 
 ### 代理后报502错误
 
-:::tip 问题 
+:::tip 问题
+
 * 反向代理后访问api一直报502错误
 :::
 
