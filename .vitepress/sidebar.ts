@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-01-03 10:53:02
+ * @LastEditTime: 2023-01-03 11:39:01
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -61,6 +61,9 @@
         {
           text:'centos安装nodejs',
           link:'/other/nodejs'
+        },{
+          text:'vscode 远程开发',
+          link:'/other/remote'
         }
       ]
     }
