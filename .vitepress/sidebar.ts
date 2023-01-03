@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2022-12-06 11:45:14
+ * @LastEditTime: 2023-01-03 10:53:02
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
  * @Description: 
@@ -58,7 +58,10 @@
           text:'sentry错误监控',
           link:'/other/sentry'
         },
-        
+        {
+          text:'centos安装nodejs',
+          link:'/other/nodejs'
+        }
       ]
     }
   ],

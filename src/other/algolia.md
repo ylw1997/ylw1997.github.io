@@ -12,6 +12,7 @@ algolia 是一个网站全局搜索工具
 
 :::tip
 有两种办法爬取网站数据
+
 * 使用官方的自动爬取工具docsearch ,爬取完成以后可以直接使用
 * 自己使用官方的docker镜像爬取,这个比较麻烦
 :::
@@ -19,7 +20,7 @@ algolia 是一个网站全局搜索工具
 ## 官方爬取
 
 :::tip
-1, https://docsearch.algolia.com/apply/ 提交网站信息
+1, <https://docsearch.algolia.com/apply/> 提交网站信息
 
 2,如果申请通过，我们就会收到邮件
 
@@ -31,14 +32,14 @@ algolia 是一个网站全局搜索工具
 ## docker爬取
 
 :::tip 官网文档
-文档地址 https://docsearch.algolia.com/docs/legacy/run-your-own/
+文档地址 <https://docsearch.algolia.com/docs/legacy/run-your-own/>
 :::
 
 1, 到官网注册账号
-https://www.algolia.com/
+<https://www.algolia.com/>
 
 2, 下载jq工具,放在根目录
-https://stedolan.github.io/jq/
+<https://stedolan.github.io/jq/>
 
 3,新建.env文件放在根目录
 
@@ -47,10 +48,11 @@ https://stedolan.github.io/jq/
 APPLICATION_ID=xxx
 API_KEY=xxx
 ```
+
 4,新建config.json放在跟目录
 
 :::tip 配置文件实例
-https://github.com/algolia/docsearch-configs/tree/master/configs
+<https://github.com/algolia/docsearch-configs/tree/master/configs>
 :::
 
 ```json
@@ -73,6 +75,7 @@ https://github.com/algolia/docsearch-configs/tree/master/configs
   }
 }
 ```
+
 4,运行docker
 
 :::warning
@@ -80,16 +83,19 @@ https://github.com/algolia/docsearch-configs/tree/master/configs
 :::
 
 官网命令
+
 ```shell
 docker run -it --env-file=.env -e "CONFIG=$(cat /path/to/your/config.json | jq -r tostring)" algolia/docsearch-scraper
 ```
 
 windows命令
+
 ```shell
 docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | ./jq -r tostring)" algolia/docsearch-scraper
 ```
 
 git bash命令
+
 ```shell
 winpty docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | ./jq -r tostring)" algolia/docsearch-scraper
 ```
@@ -102,13 +108,12 @@ winpty docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | ./jq -r t
 
 ![数据](https://s3.bmp.ovh/imgs/2022/08/29/191c240b08ea83ee.png)
 
-
 ## 获取appid和key
 
-登录自己账号 https://www.algolia.com/
+登录自己账号 <https://www.algolia.com/>
 
 进入以下地址
-https://www.algolia.com/account/api-keys/all
+<https://www.algolia.com/account/api-keys/all>
 
 查看自己的appid和key
 ![key](https://s3.bmp.ovh/imgs/2022/08/29/2b8d3b200fcfc88a.png)
