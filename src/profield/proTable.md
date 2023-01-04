@@ -65,6 +65,8 @@ import { proTable } from "profield";
 |defaultExpandAllRows|默认展开所有行|`boolean`|`false`|
 |selectType|表格选中类型|`'checkbox'` \| `'radio'`|`'checkbox'`|
 |defaultFieldWidth|默认搜索栏宽度|`number`|`100`|
+|defaultSearchData|默认搜索参数|`Object`|`{}`|
+|getCheckboxProps|选择框的默认属性配置[文档](https://antdv.com/components/table-cn#components-table-demo-row-selection-custom)|`Function`|`null`|
 
 ## 事件
 
