@@ -1,5 +1,59 @@
 # docker
 
+## 安装docker
+
+:::tip 安装
+
+* 两种安装方法
+
+* 1, yum安装
+
+* [切换源](https://developer.aliyun.com/mirror/centos?spm=a2c6h.13651102.0.0.27311b11e58Kkv)
+
+* 安装 `yum install docker`
+
+* 2,脚本一键安装
+
+* [DaoCloud](https://get.daocloud.io/#install-compose)
+
+:::
+
+```bash
+# yum安装
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo
+
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+yum install -y docker-ce
+
+docker -v
+
+```
+
+```bash
+# DaoCloud
+curl -sSL https://get.daocloud.io/docker | sh
+```
+
+## 安装docker-compose
+
+:::tip
+
+* 脚本安装
+
+* [DaoCloud](https://get.daocloud.io/#install-compose)
+
+:::
+
+```bash
+# DaoCloud
+curl -L https://get.daocloud.io/docker/compose/releases/download/v2.15.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+
+chmod +x /usr/local/bin/docker-compose
+```
+
 ## 搜索镜像
 
 ```bash
@@ -116,20 +170,20 @@ CMD ["nginx", "-g", "daemon off;"]
 
 :::tip 命令摘要
 
-- FROM- 镜像从那里来
-- MAINTAINER- 镜像维护者信息
-- RUN- 构建镜像执行的命令，每一次 RUN 都会构建一层
-- CMD- 容器启动的命令，如果有多个则以最后一个为准，也可以为 ENTRYPOINT 提供参数
-- VOLUME- 定义数据卷，如果没有定义则使用默认
-- USER- 指定后续执行的用户组和用户
-- WORKDIR- 切换当前执行的工作目录
-- HEALTHCHECH- 健康检测指令
-- ARG- 变量属性值，但不在容器内部起作用
-- EXPOSE- 暴露端口
-- ENV- 变量属性值，容器内部也会起作用
-- ADD- 添加文件，如果是压缩文件也解压
-- COPY- 添加文件，以复制的形式
-- ENTRYPOINT- 容器进入时执行的命令
+* FROM- 镜像从那里来
+* MAINTAINER- 镜像维护者信息
+* RUN- 构建镜像执行的命令，每一次 RUN 都会构建一层
+* CMD- 容器启动的命令，如果有多个则以最后一个为准，也可以为 ENTRYPOINT 提供参数
+* VOLUME- 定义数据卷，如果没有定义则使用默认
+* USER- 指定后续执行的用户组和用户
+* WORKDIR- 切换当前执行的工作目录
+* HEALTHCHECH- 健康检测指令
+* ARG- 变量属性值，但不在容器内部起作用
+* EXPOSE- 暴露端口
+* ENV- 变量属性值，容器内部也会起作用
+* ADD- 添加文件，如果是压缩文件也解压
+* COPY- 添加文件，以复制的形式
+* ENTRYPOINT- 容器进入时执行的命令
   :::
 
 ## dockerfile 创建镜像
@@ -152,9 +206,9 @@ mynginx              latest          c8c87fb396ce   43 seconds ago   146MB
 Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。
 大致步骤:
 
-- 使用 Dockerfile 定义应用程序的环境
-- 使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。
-- 使用 docker-compose up 命令来启动应用程序。
+* 使用 Dockerfile 定义应用程序的环境
+* 使用 docker-compose.yml 定义构成应用程序的服务，这样它们可以在隔离环境中一起运行。
+* 使用 docker-compose up 命令来启动应用程序。
   :::
 
 ## docker-compose.yml
@@ -178,10 +232,22 @@ docker-compose up -d
 docker-compose -f .\php.yml up -d
 ```
 
-## 停止
+## 全部停止
 
 ```bash
-docker-compose down
+docker stop $(docker ps -a -q)
+```
+
+## 全部删除容器
+
+```bash
+docker rm $(docker ps -aq)
+```
+
+## 全部删除镜像
+
+```bash
+docker rmi -f $(docker images -qa)
 ```
 
 ## 查看运行状态
@@ -291,6 +357,7 @@ networks:
       config:
         - subnet: 172.19.0.0/16
 ```
+
 ## jenkins compose文件实例
 
 ```bash
