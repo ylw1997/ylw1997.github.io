@@ -1,7 +1,6 @@
 # jenkins
 
 > jenkins 是一个开源的持续集成工具，可以用来自动化构建、测试、部署项目
-
 > 这里用docker-compose 部署jenkins,并把jenkins文件夹映射到外部,方便管理
 
 ## docker 安装jenkins
@@ -114,9 +113,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ## 7,配置nodejs
 
 > 配置nodejs,主要是前端项目使用
-
 > 打开系统管理 -> 全局工具配置 -> nodejs
-
 > 按照如下配置
 
 ![img](https://article.biliimg.com/bfs/article/3dfc98a8dc0793bc9898142b4e50baaa9ab4fd5c.png)
@@ -228,11 +225,11 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 * 在 Remote directory 输入 服务器当前用户目录下面的某一个文件夹
 
-**例如上传到 /root/jobs 用户文件夹根目录是 /root 那就此处填写 jobs**
+* 例如上传到 /root/jobs 用户文件夹根目录是 /root 那就此处填写 jobs**
 
 * 在 Exec command 输入上传完成后需要执行的命令,一般是执行命令
 
-**如果填写了Remote directory,那就要先进入这个文件夹,例如 # cd jobs**
+* 如果填写了Remote directory,那就要先进入这个文件夹,例如 # cd jobs**
 
 :::
 
@@ -284,6 +281,18 @@ cat /var/jenkins_home/secrets/initialAdminPassword
   <url>https://maven.aliyun.com/repository/public</url>
 </mirror>
 ```
+
+:::
+
+## 自定义jdk
+
+:::tip jdk
+
+* 1,下载jdk解压复制到镜像jenkins内部
+
+* 2,配置jenkins 系统管理 -> 全局工具配置 -> jdk 把自动安装去掉,JAVA_HOME填写自己的jdk路径
+
+* 3,保存
 
 :::
 
