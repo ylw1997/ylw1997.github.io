@@ -1,4 +1,4 @@
-# jenkins 
+# jenkins
 
 > jenkins 是一个开源的持续集成工具，可以用来自动化构建、测试、部署项目
 
@@ -42,6 +42,7 @@ services:
     volumes:
       - /demo/jenkins/jenkins_home:/var/jenkins_home  # 把jenkins_home映射到本地
 ```
+
 ![图片](https://article.biliimg.com/bfs/article/7ac8eae312c980d5a080416637471ee85895ff1a.png)
 
 ### 3,运行docker-compose.yml文件,启动jenkins
@@ -49,6 +50,7 @@ services:
 ```shell
 docker-compose up -d
 ```
+
 ![图片](https://article.biliimg.com/bfs/article/49bd4814740253982e822cc907f315f6b07c69eb.png)
 
 > 查看是否启动成功
@@ -56,10 +58,10 @@ docker-compose up -d
   ```shell
   docker ps -a
   ```
+
 ![img](https://article.biliimg.com/bfs/article/4e699dec924b35da5e332f85d0c37461cfea990d.png)
   
 > 启动成功,并且端口8080已经和本地8080映射了
-
 
 ## 1,访问jenkins
 
@@ -84,13 +86,11 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![img](https://article.biliimg.com/bfs/article/fb1d668ccd564924202d3aacf41630db83035ccd.png)
 
-
 ## 4,创建管理员账号
 
 > 创建管理员账号
 
 ![img](https://article.biliimg.com/bfs/article/a5b03d494be52fee197f7b73b6aa2e4afb10cbed.png)
-
 
 ## 5,安装完成
 
@@ -98,17 +98,17 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![img](https://article.biliimg.com/bfs/article/10866b6f646647b93d9c72b1c5ad50c15b4beb0c.png)
 
-
 ## 6,安装插件
 
 :::tip 安装插件
- * Localization: Chinese (Simplified) 中文语言包
- * Publish Over SSH 通过ssh上传打包产物
- * github plugin 
- * gitlab plugin
- * gitee plugin
- * nodejs plugin
- * Maven Integration
+
+* Localization: Chinese (Simplified) 中文语言包
+* Publish Over SSH 通过ssh上传打包产物
+* github plugin
+* gitlab plugin
+* gitee plugin
+* nodejs plugin
+* Maven Integration
 :::
 
 ## 7,配置nodejs
@@ -121,10 +121,10 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![img](https://article.biliimg.com/bfs/article/3dfc98a8dc0793bc9898142b4e50baaa9ab4fd5c.png)
 
-
 ## 8,配置maven
 
 :::tip
+
 * 主要是后端java项目使用
 
 * 打开系统管理 -> 全局工具配置 -> Maven
@@ -132,13 +132,12 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 * 如下配置
 :::
 
-
 ![img](https://article.biliimg.com/bfs/article/50c9258868972806cf4f6450043213ee6b5ba973.png)
-
 
 ## 9,配置JDK
 
 :::tip 配置JDK
+
 * 主要是后端java项目使用
 
 * 打开系统管理 -> 全局工具配置 -> JDK
@@ -150,10 +149,10 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![i](https://article.biliimg.com/bfs/article/275948e8d33132f4febd552139c139129be38c1c.png)
 
-
 ## 10,配置SSH服务器
 
 :::tip 服务器
+
 * 配置服务器是为了自动化部署使用
 
 * 打开系统管理 -> 系统管理 -> 系统配置 -> SSH Servers
@@ -166,8 +165,6 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 :::
 
 ![i](https://article.biliimg.com/bfs/article/428bdb69861ad45d17aed71de29b9de6952f666f.png)
-
-
 
 ## 11,新建任务
 
@@ -184,10 +181,10 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![i](https://article.biliimg.com/bfs/article/7cce44a5094d6123af38fef4d2802c602738c037.png)
 
-
 ## 12,配置git地址
 
 :::tip
+
 * 进入项目 -> 设置 -> 源码管理
 
 * 点击git,Repository URL栏输入项目git地址
@@ -202,10 +199,10 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ![i](https://article.biliimg.com/bfs/article/16ec8812dd5b8f2cf4f2ca543d16a275c9924c4e.png)
 
-
 ## 13,打包配置
 
 :::tip 打包配置
+
 * Root POM 输入pom.xml的地址
 
 * Goals and options 输入 打包命令 clean install
@@ -218,6 +215,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ## 14,配置SSH上传
 
 :::tip SSH上传
+
 * 点击 增加构建后操作步骤 按钮
 
 * 选择 Send build artifacts over SSH 选项
@@ -241,21 +239,23 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ![i](https://article.biliimg.com/bfs/article/70b458f265c83cebcbfad6b474f3e72d95ca3fb1.png)
 
 :::tip 提示
+
 * 如果有多个文件需要上传,可以点击下方 Add Transfer Set 按钮新增上传
 :::
 
 ## 15,构建
 
 :::tip 构建
+
 * 返回项目目录,点击 立即构建 按钮
 :::
 
 ![i](https://article.biliimg.com/bfs/article/a245aa1f3b9e4b29b3b701d8cbd66736890b73bd.png)
 
-
 ## 注意
 
 :::tip 注意
+
 * 1, 配置完Maven和JDK以后,jenkins并不会在配置完就安装,而是在第一次运行任务的时候自动安装
 
 * 2,docker-compose是定义和编排docker镜像的工具,通过使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务
@@ -263,17 +263,42 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 * 3,第一次运行任务会需要较长时间用来下载依赖和安装Maven,JDK,第二次以后就会快很多
 :::
 
+## 自定义Maven路径
+
+:::tip 路径
+
+* 系统管理 -> 系统设置 -> Local Maven Repository 选择 `Default ("~/.m2/repository", or the value of 'localRepository' in Maven's settings file, if defined)`
+
+* 如果想修改maven配置文件可以在 /var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/3.8.6/conf 路径下找到setting.xml
+
+* 修改本地仓库路径:
+`<localRepository>/root/mvnrep</localRepository>`
+
+* 修改阿里云镜像
+
+```xml
+<mirror>
+  <id>aliyunmaven</id>
+  <mirrorOf>*</mirrorOf>
+  <name>阿里云公共仓库</name>
+  <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
+```
+
+:::
+
 ## 错误处理
 
 ### java.net.UnknownHostException: updates.jenkins.io
 
 :::warning 联网错误
-* 如果出现:WARNING	hudson.model.UpdateCenter#updateDefaultSite: Upgrading Jenkins. Failed to update the default Update Site 'default'. Plugin upgrades may fail.
+
+* 如果出现:WARNING hudson.model.UpdateCenter#updateDefaultSite: Upgrading Jenkins. Failed to update the default Update Site 'default'. Plugin upgrades may fail.
 java.net.UnknownHostException: updates.jenkins.io
 
 可能是jenkins没有联网,有两个方法
 
-1,打开 localhost:8080/pluginManager/advanced 修改 update Site URL 为 http://updates.jenkins.io/update-center.json
+1,打开 localhost:8080/pluginManager/advanced 修改 update Site URL 为 <http://updates.jenkins.io/update-center.json>
 
 2,进入jenkins服务器,修改/etc/resolv.conf 文件,添加 nameserver
 nameserver 8.8.8.8
@@ -283,6 +308,7 @@ nameserver 114.114.114.114
 ### No valid crumb was included in request
 
 :::warning 新版本Jenkins的CSRF安全校验的问题
+
 * 出现No valid crumb was included in request for /pluginManager/installPlugins by admin. Returning 403.
 
 * 进入/jenkins_home/
@@ -299,6 +325,7 @@ nameserver 114.114.114.114
 ### 553 mail from must equal authorized user
 
 :::warning 测试邮件出现553 mail from must equal authorized user
+
 * 出现553 mail from must equal authorized user
 
 * 在 系统管理（Manage Jenkins）的"系统设置（Configure system）"中"Jenkins Location"添加系统管理员邮件地址（System Admin e-mail address）
@@ -306,7 +333,6 @@ nameserver 114.114.114.114
 * System Admin e-mail address要和邮件服务器的用户名一致
 
 :::
-
 
 ### Maven JVM terminated unexpectedly with exit code 137
 
