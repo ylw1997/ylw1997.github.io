@@ -1,9 +1,9 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-01-03 11:39:01
+ * @LastEditTime: 2023-01-11 09:42:33
  * @LastEditors: yangliwei 1280426581@qq.com
- * @FilePath: \vitepress-starter\.vitepress\sidebar.ts
+ * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
  */
  const a =  {
@@ -64,6 +64,9 @@
         },{
           text:'vscode 远程开发',
           link:'/other/remote'
+        },{
+          text:'nvm 使用',
+          link:'/other/nvm'
         }
       ]
     }
