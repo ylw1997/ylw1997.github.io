@@ -5,6 +5,7 @@
 ### 1,配置项目
 
 :::tip 配置项目
+
 * 1,点击项目的配置
 
 * 2,点击构建触发器,勾选`Build when a change is pushed to GitLab.GitLab webhook URL: http://XXX Enabled GitLab triggers`
@@ -32,7 +33,6 @@
 
 :::
 
-
 ![img](https://article.biliimg.com/bfs/article/8aacaff0700e110c89e176cbe15562f59ed115a6.png)
 
 ## 邮件通知
@@ -40,6 +40,7 @@
 ### 1,邮箱配置
 
 :::tip 邮箱配置
+
 * 1,进入系统管理,点击系统配置,找到Extended E-mail Notification
 
 * 2,在SMTP Serve 输入你的邮箱的服务器地址(文中用的163邮箱,可以在163邮箱的设置页面找到,其他邮箱也是同理)
@@ -48,7 +49,7 @@
 
 * 4,点击高级,选择凭证(如果没有凭证可以添加一个凭证,输入自己的用户名和密码)
 
-* 5,勾选Use ssl 
+* 5,勾选Use ssl
 
 * 6,Default Content Type 选择text/html
 
@@ -63,6 +64,7 @@
 ### 2,项目配置
 
 :::tip 项目配置
+
 * 1,打开任务的配置页面,在最下面找到增加构建后操作步骤,选择Editable Email Notification
 
 * 2,在Editable Email Notification 配置项中,找到并点击 Advanced Settings 按钮
@@ -98,6 +100,7 @@
 ### 3,查看是否成功
 
 :::tip
+
 * 1,点击立即构建
 
 * 2,登录邮箱
@@ -110,6 +113,7 @@
 ### 下载jenkins.war
 
 :::tip 下载
+
 * 进入jenkins ,点击系统管理 ,如果有升级版本,会自动提示,点击下载即可
 * 也可以 直接点 [这里](http://mirrors.jenkins.io/war/latest/jenkins.war) 下载
 :::
@@ -143,10 +147,10 @@ docker restart myjenkins
 
 ![i](https://article.biliimg.com/bfs/article/993efc73e791142ab40f1877cc16dd2f6166f17b.png)
 
-
 ## 多POM的MAVEN项目打包
 
 :::tip 多POM的MAVEN项目
+
 * 在部署spring cloud项目的时候,往往会存在多个pom文件,jenkins可以多次打包,然后部署
 
 * 1,点击进入项目的配置,找到Pre Steps,选择 调用顶层maven目标 选项
@@ -163,14 +167,14 @@ docker restart myjenkins
 ![i](https://article.biliimg.com/bfs/article/c4e36e3da58bd6bf662c4a08107ab5210882f888.png)
 
 :::warning 注意
+
 * 可以配置多个Pre Steps
 * 最后一个pom项目,必须在项目的 Build 项中配置
 :::
 
 ![i](https://article.biliimg.com/bfs/article/0781cf07f761ccedcccc53ef113380fa98f5f38e.png)
 
-
-## 清理jenkins 
+## 清理jenkins
 
 > 1,可以在设置中设置丢弃旧的构建
 
@@ -181,3 +185,19 @@ docker restart myjenkins
 ![i](https://article.biliimg.com/bfs/article/0c684c5e77a9b6be3b8ec6948fe9a0f97a1353b1.png)
 
 > 3,优化项目配置,例如:打包spring cloud 可以不全局打包,只打包其中几个pom
+
+## 备份jenkins任务
+
+> 1, 可以在/var/jenkins/jobs 目录下查看当前jenkins的任务
+
+> 2,直接打包jobs文件夹即可备份
+
+```bash
+tar -zcvf job.tar.gz jobs
+```
+
+## 恢复jenkins任务
+
+> 1,把打包的job.tar.gz 解压复制到现有的jenkins jobs目录下
+
+> 2,打开jenkins的系统管理->读取设置,重启jenkins即可
