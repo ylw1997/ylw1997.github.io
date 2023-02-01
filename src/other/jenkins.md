@@ -296,9 +296,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 :::
 
-## 错误处理
-
-### java.net.UnknownHostException: updates.jenkins.io
+## java.net.UnknownHostException: updates.jenkins.io
 
 :::warning 联网错误
 
@@ -314,7 +312,7 @@ nameserver 8.8.8.8
 nameserver 114.114.114.114
 :::
 
-### No valid crumb was included in request
+## No valid crumb was included in request
 
 :::warning 新版本Jenkins的CSRF安全校验的问题
 
@@ -331,7 +329,7 @@ nameserver 114.114.114.114
   </crumbIssuer>
   ```
 
-### 553 mail from must equal authorized user
+## 553 mail from must equal authorized user
 
 :::warning 测试邮件出现553 mail from must equal authorized user
 
@@ -343,7 +341,7 @@ nameserver 114.114.114.114
 
 :::
 
-### Maven JVM terminated unexpectedly with exit code 137
+## Maven JVM terminated unexpectedly with exit code 137
 
 :::warning Maven JVM terminated unexpectedly with exit code 137
 
@@ -355,7 +353,7 @@ nameserver 114.114.114.114
 
 :::
 
-### jenkins ssh连接超时 SSH: Disconnecting configuration
+## jenkins ssh连接超时 SSH: Disconnecting configuration
 
 :::SSH: Disconnecting configuration
 
@@ -364,5 +362,27 @@ nameserver 114.114.114.114
 * chmod 777 myshell.sh
 
 * 重启服务
+
+:::
+
+## jenkins java.io.EOFException: unexpected stream termination
+
+::: java.io.EOFException: unexpected stream termination
+
+* 可能是jdk问题
+
+* 重新启动再次打包即可
+
+* 重启服务
+
+:::
+
+## jenkins 推送自动打包功能报500问题
+
+::: 推送自动打包功能报500
+
+* 配置完成后需要重启jenkins
+
+* 重启jenins服务后可用
 
 :::
