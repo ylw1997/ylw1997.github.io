@@ -354,3 +354,15 @@ nameserver 114.114.114.114
 * 重启服务
 
 :::
+
+### jenkins ssh连接超时 SSH: Disconnecting configuration
+
+:::SSH: Disconnecting configuration
+
+* 可能是权限问题,例如执行脚本没有给权限
+
+* chmod 777 myshell.sh
+
+* 重启服务
+
+:::
