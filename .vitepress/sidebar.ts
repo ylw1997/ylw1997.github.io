@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-06 16:21:41
+ * @LastEditTime: 2023-02-06 16:24:46
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -140,7 +140,7 @@
       text: 'JAVA',
       items:[
         {
-          text: 'java',
+          text: 'bootstrap.yml多环境配置',
           link: '/back/java/bootstrap'
         }
       ]
