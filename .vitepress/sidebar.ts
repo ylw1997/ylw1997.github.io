@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-01-11 09:42:33
+ * @LastEditTime: 2023-02-06 16:21:41
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -137,19 +137,11 @@
   ],
   "/back/": [
     {
-      text: 'NODE',
-      items:[
-        {
-          text: 'nodejs',
-          link: '/back/nodejs/'
-        }
-      ]
-    },{
       text: 'JAVA',
       items:[
         {
           text: 'java',
-          link: '/back/java/'
+          link: '/back/java/bootstrap'
         }
       ]
     }
