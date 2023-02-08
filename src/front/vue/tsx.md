@@ -81,6 +81,16 @@ tsx 语法:
 />
 ```
 
+## 表单修饰符
+
+```html
+<ProField {...attrs} v-model:value={{data.value[index]}}/>
+```
+
+```tsx
+<ProField {...attrs} v-model:value={[data.value[index],['trim']]}/>
+```
+
 ## 注意
 
 * tsx组件只有一个根节点
