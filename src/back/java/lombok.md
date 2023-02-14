@@ -69,3 +69,44 @@ public void main() throws Exception{
 ```java
 log.info(String.valueOf(users));
 ```
+
+## @Getter,@Setter
+
+:::tip
+
+- 可用于生成get和set方法
+- 可以在类上使用，也可以在属性上使用
+:::
+
+```java
+@Getter
+@Setter
+public class User {
+    private int id;
+    private String name;
+    private int age;
+}
+```
+
+## @EqualsAndHashCode
+
+:::tip
+
+- 可用于生成equals和hashCode方法
+
+- 可以在类上使用，也可以在属性上使用
+
+- 可以指定属性，也可以不指定属性
+
+:::
+
+```java
+
+@EqualsAndHashCode
+public class User {
+    private int id;
+    private String name;
+    private int age;
+}
+  ```
+  
