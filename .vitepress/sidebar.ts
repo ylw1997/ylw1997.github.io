@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-14 15:44:23
+ * @LastEditTime: 2023-02-15 11:16:27
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -146,6 +146,9 @@
         {
           text: 'lombok',
           link: '/back/java/lombok'
+        },{
+          text:"spring 基础注解",
+          link:"/back/java/annotations"
         }
       ]
     }
