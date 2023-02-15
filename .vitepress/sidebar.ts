@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-15 11:16:27
+ * @LastEditTime: 2023-02-15 15:40:59
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -149,6 +149,9 @@
         },{
           text:"spring 基础注解",
           link:"/back/java/annotations"
+        },{
+          text:'swagger 3',
+          link:'/back/java/swagger'
         }
       ]
     }
