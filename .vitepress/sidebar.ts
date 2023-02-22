@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-15 15:40:59
+ * @LastEditTime: 2023-02-21 17:18:57
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -152,6 +152,12 @@
         },{
           text:'swagger 3',
           link:'/back/java/swagger'
+        },{
+          text:"pageHelper",
+          link:"/back/java/pageHelper"
+        },{
+          text:"mybatis-plus",
+          link:"/back/java/mybatisPlus"
         }
       ]
     }
