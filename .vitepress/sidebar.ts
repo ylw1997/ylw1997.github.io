@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-21 17:18:57
+ * @LastEditTime: 2023-02-22 14:44:20
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -158,6 +158,9 @@
         },{
           text:"mybatis-plus",
           link:"/back/java/mybatisPlus"
+        },{
+          text:'CRUD',
+          link:'/back/java/CRUD'
         }
       ]
     }
