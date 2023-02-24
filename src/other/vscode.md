@@ -330,13 +330,15 @@ vsce package
 
 - vscode扩展上传[文档](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)
 
-- 1,到 [devops](https://ylw1280426581.visualstudio.com/_usersSettings/tokens)创建一个access token,
-必须
+- 1,到 [devops](https://ylw1280426581.visualstudio.com/_usersSettings/tokens)创建一个access token,查看文档 <https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token>
 
 - 2,创建扩展市场的账号,[点击这里](https://marketplace.visualstudio.com/manage)
 
 :::
 
 ```bash
+# 登录
+vsce login ylw
+# 发布
 vsce publish
 ```
