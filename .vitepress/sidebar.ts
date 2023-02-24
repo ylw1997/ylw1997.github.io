@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-22 14:44:20
+ * @LastEditTime: 2023-02-24 11:18:54
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -67,6 +67,9 @@
         },{
           text:'nvm 使用',
           link:'/other/nvm'
+        },{
+          text:'linuxLVM 扩展分区',
+          link:'/other/linuxLVM'
         }
       ]
     }
