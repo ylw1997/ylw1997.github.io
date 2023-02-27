@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-24 11:18:54
+ * @LastEditTime: 2023-02-27 11:48:47
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -164,6 +164,9 @@
         },{
           text:'CRUD',
           link:'/back/java/CRUD'
+        },{
+          text:'Exception',
+          link:'/back/java/exception'
         }
       ]
     }
