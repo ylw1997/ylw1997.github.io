@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-02-27 11:48:47
+ * @LastEditTime: 2023-03-01 16:28:18
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -167,6 +167,9 @@
         },{
           text:'Exception',
           link:'/back/java/exception'
+        },{
+          text:"Redis",
+          link:"/back/java/redis"
         }
       ]
     }
