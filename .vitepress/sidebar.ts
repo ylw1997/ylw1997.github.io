@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-03-01 16:28:18
+ * @LastEditTime: 2023-03-02 14:49:25
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -147,19 +147,19 @@
           link: '/back/java/bootstrap'
         },
         {
-          text: 'lombok',
+          text: 'Lombok',
           link: '/back/java/lombok'
         },{
-          text:"spring 基础注解",
+          text:"Spring Boot 基础注解",
           link:"/back/java/annotations"
         },{
-          text:'swagger 3',
+          text:'Swagger 3',
           link:'/back/java/swagger'
         },{
-          text:"pageHelper",
+          text:"PageHelper",
           link:"/back/java/pageHelper"
         },{
-          text:"mybatis-plus",
+          text:"Mybatis-plus",
           link:"/back/java/mybatisPlus"
         },{
           text:'CRUD',
@@ -170,6 +170,9 @@
         },{
           text:"Redis",
           link:"/back/java/redis"
+        },{
+          text:"Upload",
+          link:"/back/java/upload"
         }
       ]
     }
