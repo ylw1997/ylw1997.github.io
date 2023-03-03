@@ -7,6 +7,15 @@
 - AOP 通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。
 :::
 
+## 0,引入依赖
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-aop</artifactId>
+</dependency>
+```
+
 ## 1,编写注解
 
 :::tip
