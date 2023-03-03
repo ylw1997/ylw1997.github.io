@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-03-02 14:49:25
+ * @LastEditTime: 2023-03-03 17:01:25
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -173,6 +173,9 @@
         },{
           text:"Upload",
           link:"/back/java/upload"
+        },{
+          text:"AOP",
+          link:"/back/java/aop"
         }
       ]
     }
