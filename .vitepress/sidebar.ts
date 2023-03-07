@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-03-06 15:47:03
+ * @LastEditTime: 2023-03-07 16:04:10
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -179,6 +179,9 @@
         },{
           text:"WebSocket",
           link:"/back/java/websocket"
+        },{
+          text:"JWT",
+          link:"/back/java/jwt"
         }
       ]
     }
