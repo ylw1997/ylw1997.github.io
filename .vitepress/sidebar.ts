@@ -182,6 +182,9 @@
         },{
           text:"JWT",
           link:"/back/java/jwt"
+        },{
+          text:"Spring Security",
+          link:"/back/java/security"
         }
       ]
     }
