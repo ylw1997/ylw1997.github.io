@@ -418,3 +418,27 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 }
 
 ```
+
+## 12,配置拦截器
+
+```java
+// MySecurityConfig.java
+
+@Configuration
+public class MySecurityConfig  {
+
+    @Resource
+    private JwtAuthenticationTokenFilter jwtAuthenticationFilter;
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http,MySecurityAuthenticationHandler mySecurityAuthenticationHandler) throws Exception {
+    
+    ...
+    // jwt过滤器
+    http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    // 允许跨域
+    http.cors();
+    return http.build();
+    }
+
+}
