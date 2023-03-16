@@ -95,3 +95,83 @@ public class UserController {
 }
 
 ```
+
+## 1,防止重复提交注解
+
+```java
+// AvoidRepeatSubmit.java
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface AvoidRepeatSubmit {
+
+    long time() default 3;
+}
+
+```
+
+## 2,创建切片类实现
+
+```java
+// AvoidRepeatSubmitAspect.java
+@Aspect
+@Component
+@Slf4j
+public class AvoidRepeatSubmitAspect {
+
+    @Resource
+    RedisCache redisCache;
+
+    @Before("@annotation(com.yangliwei.product.annotation.AvoidRepeatSubmit)")
+    public void repeatSubmitIntercept(JoinPoint joinPoint){
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        String ip = WebUtil.IpAddressUtils(request);
+        String className = joinPoint.getTarget().getClass().getName();
+        String methodName = joinPoint.getSignature().getName();
+        AvoidRepeatSubmit avoidRepeatSubmit = this.getAvoidRepeatSubmit(joinPoint);
+        long time = avoidRepeatSubmit.time();
+        String key = ip + className + methodName;
+        log.info("key:{}",key);
+        String value = redisCache.getCacheObject(key);
+        if (value != null) {
+            throw new CustomException(500,"请勿重复提交");
+        }
+        redisCache.setCacheObject(key,key, time, TimeUnit.SECONDS);
+    }
+
+    private AvoidRepeatSubmit getAvoidRepeatSubmit(JoinPoint joinPoint) {
+        MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
+        return methodSignature.getMethod().getAnnotation(AvoidRepeatSubmit.class);
+    }
+}
+
+```
+
+// 查询ip地址
+
+```java
+
+    public static String IpAddressUtils(HttpServletRequest request){
+        String ip = request.getHeader("x-forwarded-for");
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        return ip;
+    }
+```
+
+## 3,使用
+
+```java
+// HelloController.java
+@GetMapping("hello")
+@AvoidRepeatSubmit(time = 5)
+public String hello(){
+    return "hello world";
+}
+```
