@@ -7,6 +7,13 @@
 cat /etc/hosts
 ```
 
+## 查看打开的应用占用的端口
+
+```bash
+# 查看打开的端口
+lsof -i -P -n |grep docker
+```
+
 ## 查看端口
 
 ```bash
