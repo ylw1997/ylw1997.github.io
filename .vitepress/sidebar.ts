@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-03-07 16:04:10
+ * @LastEditTime: 2023-04-18 10:53:20
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -70,6 +70,9 @@
         },{
           text:'linuxLVM 扩展分区',
           link:'/other/linuxLVM'
+        },{
+          text:'Hardor 私有docker仓库',
+          link:'/other/hardor'
         }
       ]
     }
