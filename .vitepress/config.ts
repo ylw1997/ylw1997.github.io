@@ -1,9 +1,9 @@
 /*
  * @Author: yangliwei 1280426581@qq.com
  * @Date: 2022-08-19 16:28:44
- * @LastEditTime: 2022-09-21 14:48:12
+ * @LastEditTime: 2023-04-23 10:36:23
  * @LastEditors: yangliwei 1280426581@qq.com
- * @FilePath: \vitepress-starter\.vitepress\config.ts
+ * @FilePath: /vitepress-blog/.vitepress/config.ts
  * Copyright (c) 2022 by yangliwei 1280426581@qq.com, All Rights Reserved. 
  * @Description: 
  */
@@ -33,14 +33,14 @@ export default {
     socialLinks: [{ icon: "github", link: "https://github.com/ylw1997/ylw1997.github.io" }],
     nav,
     sidebar,
-    algolia:{
-      indexName: 'yangliwei',
-      appId: 'IO7XWXF7SS',
-      apiKey: '96eddc6de0f913ef9e004ad7141dddd5',
-      searchPagePath: false,
-      contextualSearch: false,
-      searchParameters: {}
-    },
+    // algolia:{
+    //   indexName: 'yangliwei',
+    //   appId: 'IO7XWXF7SS',
+    //   apiKey: '96eddc6de0f913ef9e004ad7141dddd5',
+    //   searchPagePath: false,
+    //   contextualSearch: false,
+    //   searchParameters: {}
+    // },
     footer: {
       message: '杨利伟的博客',
       copyright: '版权所有 © 2022-至今 Yangliwei'
@@ -50,5 +50,8 @@ export default {
       next: '下一篇'
     },
     lastUpdatedText:'最后更新于',
+    search: {
+      provider: 'local'
+    }
   }
 } as UserConfig
