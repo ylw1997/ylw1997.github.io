@@ -263,4 +263,69 @@ logging:
 
 ```
 
-> 往下配置参考4.3,4.4
+## 参考配置
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+    <springProperty name="LOG_PATH" source="logging.file.path"/>
+    <!-- Example for logging into the build folder of your project -->
+    <property name="LOG_FILE" value="${LOG_PATH}/${springAppName}/${springAppName}"/>
+
+    <!-- Appender to log to console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!-- Minimum logging level to be presented in the console logs -->
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!-- Appender to log to file -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+
+    <appender name="MyBatisStatistics" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.sql.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}-%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="dev, localserver">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="test, prod, winserver, localtest, localprod">
+        <root level="INFO">
+            <appender-ref ref="FILE"/>
+            <appender-ref ref="MyBatisStatistics"/>
+        </root>
+        <!--        <logger name="com.suntoon.project.mapper" level="DEBUG" addtivity="false">-->
+        <!--            <appender-ref ref="MyBatisStatistics"/>-->
+        <!--        </logger>-->
+    </springProfile>
+
+</configuration>
+```
