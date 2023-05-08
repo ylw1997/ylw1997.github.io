@@ -235,4 +235,32 @@ logging:
     com.qm.pay.mapper: debug
 ```
 
+### 6.4 配置环境变量
+
+```xml
+
+# logback.xml
+
+<!--prod springboot环境-->
+    <springProfile name="prod">
+        <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+            <destination>122.194.15.6:50000</destination>    <!--指定logstash ip：监听端口 tcpAppender  可自己实现如kafka传输等-->
+            <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" >
+                <customFields>{"appname":"payeco-prod"}</customFields>
+            </encoder>
+        </appender>
+    </springProfile>
+
+    <!--dev springboot环境-->
+    <springProfile name="dev,local">
+        <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+            <destination>122.194.15.6:50000</destination>    <!--指定logstash ip：监听端口 tcpAppender  可自己实现如kafka传输等-->
+            <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder" >
+                <customFields>{"appname":"payeco-dev"}</customFields>
+            </encoder>
+        </appender>
+    </springProfile>
+
+```
+
 > 往下配置参考4.3,4.4
