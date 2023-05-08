@@ -217,4 +217,22 @@ https://github.com/logfellow/logstash-logback-encoder#including-it-in-your-proje
 </configuration>
 ```
 
+### 6.3 配置mybatisplus 打印sql
+
+```yml
+# application.yml
+mybatis-plus:
+    # 搜索指定包别名
+  typeAliasesPackage: com.infrastructure.system,com.infrastructure.job.domain
+  configuration:
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*.xml
+
+logging:
+  level:
+    com.qm.pay.mapper: debug
+```
+
 > 往下配置参考4.3,4.4
