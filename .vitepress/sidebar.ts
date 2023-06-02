@@ -120,6 +120,9 @@
         {
           text:'react router 6',
           link:'/front/react/router'
+        },{
+          text:'react hooks',
+          link:'/front/react/hooks'
         }
       ]
     },{

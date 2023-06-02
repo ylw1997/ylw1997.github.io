@@ -3,11 +3,12 @@
 ## 安装
 
 :::tip react router
+
 * react router 是一个路由库
 
 * 安装 `yarn add react-router-dom`
 
-* 文档地址: https://reactrouter.com/en/main/start/overview
+* 文档地址: <https://reactrouter.com/en/main/start/overview>
 :::
 
 ## 使用
@@ -48,6 +49,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 ```
+
 ## 页面显示区域
 
 ```tsx
@@ -67,7 +69,6 @@ function App() {
 export default App;
 
 ```
-
 
 ## 鉴权
 

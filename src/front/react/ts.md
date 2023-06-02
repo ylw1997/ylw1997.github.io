@@ -13,7 +13,8 @@ const Hello = () => {
 ## 添加typeScript
 
 :::tip
- * React.FC 表示 Function Component 函数式组件
+
+* React.FC 表示 Function Component 函数式组件
 :::
 
 ```ts{4}
@@ -24,10 +25,12 @@ const Hello: React.FC = () => {
     return <div>Hello</div>;
 };
 ```
+
 ## 组件属性TS类型
 
 :::tip
-*  React.FC\<HelloProps\> 表示 Function Component 接受 HelloProps 类型的 props 
+
+* React.FC\<HelloProps\> 表示 Function Component 接受 HelloProps 类型的 props
 :::
 
 ```ts{9}
@@ -43,9 +46,11 @@ const Hello: React.FC<HelloProps> = ({ name }) => {
     return <div>{`Hello, ${name}!`}</div>;
 };
 ```
+
 ## react添加children属性
 
 :::tip
+
 * PropsWithChildren 让 props.children 带类型
 :::
 
@@ -71,6 +76,7 @@ const Hello: React.FC<PropsWithChildren<HelloProps>> = ({ name, children }) => {
 ## 使用原生属性
 
 :::tip
+
 * HTMLAttributes\<HTMLDivElement\> 让 props 可以使用 html 属性比如 className
 :::
 

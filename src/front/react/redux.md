@@ -1,6 +1,7 @@
 # redux & toolkit 使用
 
 :::tip redux
+
 * 可以理解为一个状态管理器
 * 通过 store 来管理状态
 * 通过 reducer 来管理状态的变化
@@ -40,6 +41,7 @@ export type RootState = ReturnType<typeof store.getState>
 // 推断类型：{posts：PostsState，comments：CommentsState，users：UsersState}
 export type AppDispatch = typeof store.dispatch
 ```
+
 ## 全局使用store
 
 ```typescript
@@ -170,4 +172,4 @@ export function Count() {
 
 ## 官方样例
 
-https://codesandbox.io/embed/github/reduxjs/redux-essentials-counter-example/tree/master/?fontsize=14&hidenavigation=1&theme=dark
+<https://codesandbox.io/embed/github/reduxjs/redux-essentials-counter-example/tree/master/?fontsize=14&hidenavigation=1&theme=dark>
