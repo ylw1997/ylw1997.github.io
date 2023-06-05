@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-04-28 17:28:35
+ * @LastEditTime: 2023-06-05 15:13:35
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
  * @Description: 
@@ -146,6 +146,10 @@
         {
           text:'RSA加密',
           link:'/front/other/encrypt'
+        },
+        {
+          text:'pnpm & monorepo',
+          link:'/front/other/pnpm'
         }
       ]
     }
