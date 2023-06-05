@@ -103,3 +103,9 @@ chmod 777 test.sh
 ```bash
 du -sh *
 ```
+
+## 删除 指定目录下 30天之前的 log 文件
+
+```bash
+find /home/logs -mtime +30 -name "*.log" -exec rm -rf {} \;
+```
