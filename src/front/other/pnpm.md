@@ -45,3 +45,12 @@ packages:
   # packages/* 表示packages文件夹下的所有文件夹
   - 'packages/*'
 ```
+
+## pnpm workspace 给子模块 安装依赖
+
+```bash
+
+# 安装依赖
+pnpm --filter "app1" add @umijs/plugins
+
+```
