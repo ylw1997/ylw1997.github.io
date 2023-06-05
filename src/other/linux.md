@@ -97,3 +97,9 @@ ls -l
 ```bash
 chmod 777 test.sh
 ```
+
+## 查看目录下每个文件及文件夹大小
+
+```bash
+du -sh *
+```
