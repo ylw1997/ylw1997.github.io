@@ -109,3 +109,14 @@ du -sh *
 ```bash
 find /home/logs -mtime +30 -name "*.log" -exec rm -rf {} \;
 ```
+
+## 定时任务
+
+```bash
+#添加定时任务
+crontab -e
+
+# 每天凌晨 1 点执行
+0 1 * * * /root/log-dellogs.sh
+
+```
