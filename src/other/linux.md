@@ -107,6 +107,7 @@ du -sh *
 ## 删除 指定目录下 30天之前的 log 文件
 
 ```bash
+#!/bin/bash
 find /home/logs -mtime +30 -name "*.log" -exec rm -rf {} \;
 ```
 
