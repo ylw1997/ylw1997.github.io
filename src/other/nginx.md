@@ -254,34 +254,47 @@ location ^~ /t/ {
 
 :::tip 案例
 
-* 一个H5一个后台管理一个代理后端api
+* 80端口和443端口
 :::
 
 ```bash
 server {
-    listen       80;
-    server_name  localhost;
+  listen     80;
+  server_name  yangliwei.top, www.yangliwei.top;
+  
+  location / {
+   root   /usr/share/nginx/html/blog;
+   try_files $uri $uri/ /index.html;
+   index  index.html index.htm;
+  }
 
-    location /api/ {
+  location /api/ {
         proxy_pass http://localhost:18098/;
     }
 
-    location / {
-        root /usr/share/nginx/html;
-        index  index.html index.htm;
-        try_files $uri $uri/ @router;
-        add_header Cache-Control no-cache;
+  location /.well-known/acme-challenge {
+        # 自己定义的位置，用于校验服务器所有权
+        root /root/www/letsencrypt;
     }
+  
+ }
 
-    location /admin{
-         alias /usr/share/nginx/html/admin;
-         index index.html;
-         try_files $uri $uri/ /admin/index.html;
-     }
+server {
+  listen 443 ssl;
+  server_name  yangliwei.top, www.yangliwei.top;
+   ssl_certificate /usr/share/nginx/ssl/ylw.crt;     
+   ssl_certificate_key  /usr/share/nginx/ssl/ylw.key;       
+   ssl_session_timeout 5m;
+   ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+   ssl_protocols TLSv1 TLSv1.1 TLSv1.2;      
+   ssl_prefer_server_ciphers on;  
 
-    location @router {
-        rewrite ^.*$ /index.html last;
-    }
+   location / {
+     try_files $uri $uri/ @router;
+     root   /usr/share/nginx/html/blog;
+     index index.html;
+   }
+
 }
 ```
 
