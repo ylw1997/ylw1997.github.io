@@ -121,3 +121,12 @@ crontab -e
 0 1 * * * /root/log-dellogs.sh
 
 ```
+
+## 系统流量监测
+
+```bash
+yum install -y bmon
+
+# 监测网卡流量
+bmon
+```
