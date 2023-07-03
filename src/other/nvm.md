@@ -14,7 +14,10 @@
 
 :::tip windows
 
-* 一定要卸载已安装的 NodeJS，否则会发生冲突。然后下载 nvm-windows 最新安装包，直接安装即可。
+* github 地址 `https://github.com/coreybutler/nvm-windows/releases`
+
+* 查看版本 `nvm -v`
+
 :::
 
 ## linux 安装
@@ -61,9 +64,14 @@ nvm use 12
 
 ```bash
 
-nvm uninstall 6.11.0     // 移除 node 6.11.0
-nvm ls                   // 查看目前已安装的 node 及当前所使用的 node
-nvm ls-remote            // 查看目前线上所能安装的所有 node 版本
-nvm alias default 6.11.0 // 使用 6.11.0 作为预设使用的 node 版本
+nvm off                     // 禁用node.js版本管理(不卸载任何东西)
+nvm on                      // 启用node.js版本管理
+nvm install <version>       // 安装node.js的命名 version是版本号 例如：nvm install 8.12.0
+nvm uninstall <version>     // 卸载node.js是的命令，卸载指定版本的nodejs，当安装失败时卸载使用
+nvm ls                      // 显示所有安装的node.js版本
+nvm list available          // 显示可以安装的所有node.js的版本
+nvm use <version>           // 切换到使用指定的nodejs版本
+nvm v                       // 显示nvm版本
+nvm install stable          // 安装最新稳定版
 
 ```
