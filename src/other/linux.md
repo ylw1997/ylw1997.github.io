@@ -130,3 +130,32 @@ yum install -y bmon
 # 监测网卡流量
 bmon
 ```
+
+## 防火墙
+
+```bash
+# 查看防火墙状态
+systemctl status firewalld
+
+service iptables status
+# 关闭防火墙
+systemctl stop firewalld
+
+service iptables stop
+
+# 禁止开机启动
+systemctl disable firewalld
+
+chkconfig iptables off
+
+# 开启防火墙
+
+systemctl start firewalld
+
+service iptables start
+
+# 开机启动
+chkconfig iptables on
+
+systemctl enable firewalld
+```
