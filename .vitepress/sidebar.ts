@@ -1,9 +1,9 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-06-21 14:09:49
+ * @LastEditTime: 2023-07-28 15:56:20
  * @LastEditors: yangliwei 1280426581@qq.com
- * @FilePath: /vitepress-blog/.vitepress/sidebar.ts
+ * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
  */
  const a =  {
@@ -154,6 +154,9 @@
         {
           text:'pnpm & monorepo',
           link:'/front/other/pnpm'
+        },{
+          text:'前端漏洞修复',
+          link:'/front/other/bug'
         }
       ]
     }
