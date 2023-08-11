@@ -268,63 +268,31 @@ logging:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
-    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
-    <springProperty name="LOG_PATH" source="logging.file.path"/>
-    <!-- Example for logging into the build folder of your project -->
-    <property name="LOG_FILE" value="${LOG_PATH}/${springAppName}/${springAppName}"/>
+    <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>192.168.0.251:50000</destination>
 
-    <!-- Appender to log to console -->
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <!-- Minimum logging level to be presented in the console logs -->
-            <level>DEBUG</level>
-        </filter>
-        <encoder>
-            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
-            <charset>utf8</charset>
+        <!-- encoder is required -->
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" >
+            <customFields>{"appname":"product"}</customFields>
         </encoder>
     </appender>
 
-    <!-- Appender to log to file -->
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_FILE}</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
-            <maxHistory>7</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>${FILE_LOG_PATTERN}</pattern>
-            <charset>utf8</charset>
-        </encoder>
-    </appender>
-
-
-    <appender name="MyBatisStatistics" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_FILE}.sql.%d{yyyy-MM-dd}.gz</fileNamePattern>
-            <maxHistory>10</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}-%msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <springProfile name="dev, localserver">
+<!--    dev配置文件,使用这个配置,在控制台打印,并且也在stash打印-->
+    <springProfile name="dev">
         <root level="INFO">
-            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="stash" />
         </root>
     </springProfile>
 
-    <springProfile name="test, prod, winserver, localtest, localprod">
+<!--    prod使用这个配置,只在stash打印-->
+    <springProfile name="prod">
         <root level="INFO">
-            <appender-ref ref="FILE"/>
-            <appender-ref ref="MyBatisStatistics"/>
+            <appender-ref ref="stash" />
         </root>
-        <!--        <logger name="com.suntoon.project.mapper" level="DEBUG" addtivity="false">-->
-        <!--            <appender-ref ref="MyBatisStatistics"/>-->
-        <!--        </logger>-->
     </springProfile>
 
 </configuration>
