@@ -159,3 +159,13 @@ chkconfig iptables on
 
 systemctl enable firewalld
 ```
+
+## yum找不到包
+
+```bash
+
+# 安装epel-release 三方源
+yum -y install  epel-release 
+
+yum install htop
+```
