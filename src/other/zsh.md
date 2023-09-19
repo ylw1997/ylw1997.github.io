@@ -186,3 +186,11 @@ source $ZSH/oh-my-zsh.sh
 figlet "Hi , YangLiwei"
 
 ```
+
+## 重新加载配置
+
+```bash
+
+source ~/.zshrc
+
+```
