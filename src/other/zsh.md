@@ -101,7 +101,7 @@ alternatives --set python /usr/bin/python3
 
 ```bash
 
-git clone https://gitee.com/null_454_5218/autojump.git
+git clone https://gitee.com/atiasn/autojump.git
 
 cd autojump
 
