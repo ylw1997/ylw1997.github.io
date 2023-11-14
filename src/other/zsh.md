@@ -101,7 +101,7 @@ alternatives --set python /usr/bin/python3
 
 ```bash
 
-git clone https://gitee.com/null_454_5218/autojump.git
+git clone https://gitee.com/atiasn/autojump.git
 
 cd autojump
 
@@ -184,5 +184,13 @@ source $ZSH/oh-my-zsh.sh
         autoload -U compinit && compinit -u
 
 figlet "Hi , YangLiwei"
+
+```
+
+## 重新加载配置
+
+```bash
+
+source ~/.zshrc
 
 ```

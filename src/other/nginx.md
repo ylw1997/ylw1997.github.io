@@ -250,6 +250,18 @@ location ^~ /t/ {
 
 ```
 
+## nginx 代理获取真实ip
+
+```bash
+# nginx.conf
+
+location /bg/ {    
+     proxy_pass http://172.29.128.136:8001/;
+     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+
+```
+
 ## 案例
 
 :::tip 案例

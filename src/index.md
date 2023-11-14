@@ -16,7 +16,7 @@ hero:
       text: 查看源码
       link: https://github.com/ylw1997/ylw1997.github.io.git
 features:
-- icon: ⚡️
+- icon: 🚀
   title: 前端技术 
   details: VUE,REACT,ANTD,UMI,VITE,JS,TS,ELECTRON
 - icon: 🖖
@@ -25,9 +25,7 @@ features:
 - icon: 🛠️
   title: 其他技术
   details: DOCKER,GIT,ANDROID,DESKTOP,JENKINS
+- icon: 📝
+  title: ProField
+  details: 一个基于 Ant Design Pro 的自定义组件库
 ---
-
-<script setup>
-  import {ref} from "vue"
-  const msg = ref('Hello World!')
-</script>
