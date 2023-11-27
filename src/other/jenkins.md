@@ -386,3 +386,11 @@ nameserver 114.114.114.114
 * 重启jenins服务后可用
 
 :::
+
+## jenkins 打包后日志乱码问题
+
+::: 打包后日志乱码问题
+
+* 运行脚本增加 export LANG=zh_CN.UTF-8; nohup java -Dfile.encoding=UTF-8
+
+:::

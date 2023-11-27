@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-08-11 10:09:10
+ * @LastEditTime: 2023-11-27 10:35:56
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -84,6 +84,14 @@
           text:'wsl配置',
           link:'/other/wsl'
         },
+        {
+          text:'mysql',
+          link:'/other/mysql'
+        },
+        {
+          text:"服务器初始化",
+          link:"/other/server"
+        }
       ]
     }
   ],
