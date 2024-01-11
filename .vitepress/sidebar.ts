@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2023-12-19 11:07:40
+ * @LastEditTime: 2024-01-11 20:18:13
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -94,6 +94,9 @@
         },{
           text:'k8s初始化',
           link:'/other/k8s'
+        },{
+          text:'jenkins+k8s+hardor+gitlab',
+          link:'/other/jenkins_k8s'
         }
       ]
     }

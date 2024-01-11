@@ -333,3 +333,51 @@ kubectl get pods -A -o wide
 # kube-system    kube-scheduler-master            1/1     Running   0          4h40m   192.168.0.238   master   <none>           <none>
 
 ```
+
+## 11,常见命令
+
+```bash
+# 1,查看节点
+kubectl get nodes
+
+# 2,查看pod
+kubectl get pods -A
+
+# 3,查看pod详细信息
+kubectl get pods -A -o wide
+
+# 4,查看节点
+kubectl get nodes
+
+# 5,查看节点详细信息
+kubectl get nodes -o wide
+
+# 6,查看服务
+kubectl get svc
+
+# 7,查看服务详细信息
+kubectl get svc -o wide
+
+# 8,查看详细信息
+kubectl describe pod podname
+
+# 9,查看pod日志
+kubectl logs podname
+
+# 10,查看pod的yaml文件
+kubectl get pod podname -o yaml
+
+# 11,扩容pod
+kubectl scale deployment nginx --replicas=3
+
+# 12,删除pod
+kubectl delete pod podname
+
+# 13,删除deployment
+kubectl delete deployment nginx
+
+# 14,删除service
+kubectl delete service nginx
+
+# 15,重启pod
+kubectl rollout restart deployment nginx
