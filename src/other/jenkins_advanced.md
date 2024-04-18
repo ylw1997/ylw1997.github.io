@@ -104,6 +104,7 @@
 * 1,点击立即构建
 
 * 2,登录邮箱
+
 :::
 
 ![i](https://article.biliimg.com/bfs/article/00bab6a852b689f9b80eba7b58419f41bf86518b.png)

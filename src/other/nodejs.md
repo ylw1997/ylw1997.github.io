@@ -5,6 +5,7 @@
 * 使用centos 的yum 安装nodejs
 
 * 使用tar.gz包安装也可以,但没必要
+
 :::
 
 ## 查询nodejs的yum源

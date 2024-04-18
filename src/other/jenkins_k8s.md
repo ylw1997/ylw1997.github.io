@@ -13,6 +13,7 @@
 :::tip
 
 * 为了让k8s集群中的所有节点都能拉取harbor中的镜像，需要在所有节点上登录harbor
+
 :::
 
 ```bash
@@ -25,6 +26,7 @@ docker login -u admin -p Harbor12345 harbor.abc.com
 
 * 为了让k8s集群中的所有节点都能拉取harbor中的镜像，需要在所有节点上修改docker的配置文件
 * 修改后重启docker
+
 :::
 
 ```bash
@@ -44,6 +46,7 @@ vim /etc/docker/daemon.json
 * 注意:这里jenkins是其他服务器docker安装的,直接安装jenkins有docker环境则不需要
 * 为了让jenkins能够打包推送镜像，需要在jenkins的docker compose配置文件中映射docker运行文件
 * 修改后重启jenkins
+
 :::
 
 ```yml

@@ -127,6 +127,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 * 打开系统管理 -> 全局工具配置 -> Maven
 
 * 如下配置
+
 :::
 
 ![img](https://article.biliimg.com/bfs/article/50c9258868972806cf4f6450043213ee6b5ba973.png)

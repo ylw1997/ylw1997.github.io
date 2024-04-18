@@ -8,6 +8,7 @@
 * k8s 文档：<https://kubernetes.io/zh/docs/home/>
 * 参考文档: <https://zhuanlan.zhihu.com/p/641521752>
 * 参考文档: <https://k8s.easydoc.net/docs/dRiQjyTY/28366845/6GiNOzyZ/nd7yOvdY>
+
 :::
 
 ## 1,创建虚拟机
@@ -21,6 +22,7 @@
 * 硬盘: 50G
 * 网络: 192.168.0.238,192.168.0.79,192.168.0.236
 * 主机名: master,node1,node2
+
 :::
 
 ## 2,安装docker
@@ -52,6 +54,7 @@ sudo systemctl status docker
 
 * cri-docker 是一个 CRI 的实现，它允许 Kubernetes 使用 Docker 作为底层容器运行时。
 * cri-docker 项目地址：<https://github.com/Mirantis/cri-dockerd>
+
 :::
 
 ```bash

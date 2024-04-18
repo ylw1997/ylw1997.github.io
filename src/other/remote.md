@@ -16,6 +16,7 @@
 
 * 插件名称: Remote - SSH
 * 插件地址: <https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh>
+
 :::
 
 ## 配置远程连接
@@ -25,6 +26,7 @@
 * 修改ssh配置文件 "C:\users\用户名\.ssh\config"
 
 * 配置文件如下:
+
 :::
 
 ```bash
@@ -49,6 +51,7 @@ Host 192.168.0.251
 * 4, 如果没有 authorized_keys 可以直接创建
 
 * 5, 再次连接就不用输入密码了
+
 :::
 
 ## 复制文件到本地

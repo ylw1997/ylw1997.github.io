@@ -12,7 +12,6 @@
 
 :::
 
-
 ## 前置工作
 
 :::tip 前置工作
@@ -27,7 +26,6 @@
 
 :::
 
-
 ## 设置wsl2默认发行版
 
 ```bash
@@ -39,10 +37,10 @@ wsl --set-version Ubuntu-22.04 2
 
 ![img](https://article.biliimg.com/bfs/article/93e386b896592e4bcffbb401142bfb24181457be.png)
 
-
 ## 1,拉取sentry镜像
 
 :::tip 拉取sentry镜像
+
 * 由于sentry官方镜像太老,所以需要自己拉取最新的镜像
 * [github地址](https://github.com/getsentry/self-hosted.git)
 :::
@@ -54,6 +52,7 @@ git clone https://github.com/getsentry/self-hosted.git
 ## 2,wsl下安装
 
 :::tip wsl下安装
+
 * wsl一般会把windows的文件系统映射到linux的`/mnt`目录下
 * 进入到`self-hosted`目录下
 * 执行`./install.sh`脚本
@@ -82,11 +81,13 @@ Password:
 ```bash
 docker-compose up -d
 ```
+
 ![img](https://article.biliimg.com/bfs/article/965df056b8080559e918f27e7e342ae4c5313a95.png)
 
 ## 5,访问
 
 :::tip 访问
+
 * 访问地址: `http://localhost:9000`
 :::
 
@@ -95,6 +96,7 @@ docker-compose up -d
 ## 6,配置中文
 
 :::tip 配置中文
+
 * 进入用户设置 -> 账户详情 -> PREFERENCES -> LANGUAGE
 :::
 
@@ -103,6 +105,7 @@ docker-compose up -d
 ## 7,添加项目
 
 :::tip 添加项目
+
 * 点击`创建项目`按钮,添加项目
 * 选择vue项目
 :::
@@ -144,7 +147,6 @@ export default {
 }
 ```
 
-
 ## 9,测试
 
 ```ts
@@ -166,6 +168,7 @@ export default defineComponent({
 ## 10,查看错误
 
 :::tip 查看错误
+
 * 点击 `问题` 按钮,查看错误
 :::
 
