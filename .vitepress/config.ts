@@ -1,9 +1,9 @@
 /*
  * @Author: yangliwei 1280426581@qq.com
  * @Date: 2022-08-19 16:28:44
- * @LastEditTime: 2023-04-23 10:36:23
+ * @LastEditTime: 2024-04-22 17:53:33
  * @LastEditors: yangliwei 1280426581@qq.com
- * @FilePath: /vitepress-blog/.vitepress/config.ts
+ * @FilePath: \blog\.vitepress\config.ts
  * Copyright (c) 2022 by yangliwei 1280426581@qq.com, All Rights Reserved. 
  * @Description: 
  */
@@ -52,6 +52,9 @@ export default {
     lastUpdatedText:'最后更新于',
     search: {
       provider: 'local'
-    }
+    },
+    outline: {
+      label: '页面导航'
+    },
   }
 } as UserConfig

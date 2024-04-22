@@ -153,7 +153,7 @@ services:
         hostname: prometheus
         restart: always
         volumes:
-            - /root/apps/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+            - /root/apps/prometheus/prometheus-config.yml:/etc/prometheus/prometheus.yml
         ports:
             - 9099:9090
 
@@ -213,7 +213,7 @@ services:
             - /root/apps/prometheus/blackbox.yml:/etc/blackbox/blackbox.yml
 ```
 
-### /root/apps/prometheus/prometheus.yml
+### prometheus-config.yml
 
 ```yaml
 global: # 全局配置
@@ -310,7 +310,7 @@ services:
     privileged: true
 ```
 
-### /root/apps/grafana/grafana.ini
+### grafana.ini
 
 配置grafana.ini 的email部分,以支持邮件告警
 
