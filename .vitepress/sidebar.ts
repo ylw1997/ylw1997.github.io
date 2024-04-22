@@ -97,6 +97,9 @@
         },{
           text:'jenkins+k8s+hardor+gitlab',
           link:'/other/jenkins_k8s'
+        },{
+          text:"prometheus+grafana",
+          link:'/other/prometheus'
         }
       ]
     }
