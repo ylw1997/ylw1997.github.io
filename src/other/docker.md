@@ -12,9 +12,9 @@
 
 * 安装 `yum install docker`
 
-* 2,脚本一键安装
+* 2,官方脚本
 
-* [DaoCloud](https://get.daocloud.io/#install-compose)
+* `curl -fsSL https://get.docker.com | bash -s docker`
 
 :::
 
@@ -33,25 +33,9 @@ docker -v
 ```
 
 ```bash
-# DaoCloud
-curl -sSL https://get.daocloud.io/docker | sh
-```
-
-## 安装docker-compose
-
-:::tip
-
-* 脚本安装
-
-* [DaoCloud](https://get.daocloud.io/#install-compose)
-
-:::
-
-```bash
-# DaoCloud
-curl -L https://get.daocloud.io/docker/compose/releases/download/v2.15.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-
-chmod +x /usr/local/bin/docker-compose
+# 官方脚本
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 ```
 
 ## 搜索镜像
