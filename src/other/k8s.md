@@ -350,7 +350,8 @@ kind: StorageClass
 metadata:
   name: local-storage
   annotations:
-    storageclass.kubernetes.io/is-default-class: "true"
+#   https://kubernetes.io/zh-cn/docs/tasks/administer-cluster/change-default-storage-class/
+    storageclass.kubernetes.io/is-default-class: "true" # 设置为默认存储类
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: Immediate
 
