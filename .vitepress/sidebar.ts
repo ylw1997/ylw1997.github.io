@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2024-01-11 20:18:13
+ * @LastEditTime: 2024-05-07 11:33:13
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -92,7 +92,7 @@
           text:"服务器初始化",
           link:"/other/server"
         },{
-          text:'k8s初始化',
+          text:'k8s',
           link:'/other/k8s'
         },{
           text:'jenkins+k8s+hardor+gitlab',

@@ -337,7 +337,88 @@ kubectl get pods -A -o wide
 
 ```
 
-## 11,常见命令
+## 10,创建本地存储类
+
+```bash
+# https://kubernetes.io/zh-cn/docs/concepts/storage/storage-classes/#local
+
+# 创建yaml文件
+vim storageclass.yaml
+# storageclass.yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: Immediate
+
+# 创建
+kubectl apply -f storageclass.yaml
+
+# 查看
+kubectl get sc
+
+# NAME                      PROVISIONER                    RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+# local-storage (default)   kubernetes.io/no-provisioner   Delete          Immediate           false                  72m
+```
+
+## 11,节点添加标签
+
+```bash
+# https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/assign-pods-nodes-using-node-affinity/
+kubectl label nodes node1 disktype=hdd
+# 查看节点标签
+kubectl get nodes --show-labels
+
+# NAME     STATUS   ROLES           AGE    VERSION   LABELS
+# master   Ready    control-plane   140d   v1.28.2   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=master,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=,node.kubernetes.io/exclude-from-external-load-balancers=
+# node1    Ready    <none>          140d   v1.28.2   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,disktype=hdd,kubernetes.io/arch=amd64,kubernetes.io/hostname=node1,kubernetes.io/os=linux
+# node2    Ready    <none>          140d   v1.28.2   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,disktype=hdd,kubernetes.io/arch=amd64,kubernetes.io/hostname=node2,kubernetes.io/os=linux
+```
+
+## 12,创建本地持久化存储
+
+```bash
+# https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#local
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv1
+  labels:
+    type: local
+spec:
+  storageClassName: local-storage
+  capacity:
+    storage: 30Gi
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /root/pv # 需要提前创建目录
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions: 
+        - key: disktype # 节点标签
+          operator: In
+          values:
+          - hdd
+
+# 创建
+kubectl apply -f pv.yaml
+
+# 查看
+kubectl get pv
+
+# NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                                             STORAGECLASS    REASON   AGE
+# pv1    30Gi       RWO            Delete           Bound    kubesphere-monitoring-system/prometheus-k8s-db-prometheus-k8s-0   local-storage            25m
+# pv2    30Gi       RWO            Delete           Bound    kubesphere-monitoring-system/prometheus-k8s-db-prometheus-k8s-1   local-storage            25
+```
+
+## 常见命令
 
 ```bash
 # 1,查看节点
@@ -384,3 +465,6 @@ kubectl delete service nginx
 
 # 15,重启pod
 kubectl rollout restart deployment nginx
+
+# 16,创建pod
+kubectl apply -f pod.yaml
