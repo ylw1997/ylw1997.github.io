@@ -414,6 +414,10 @@ modules:
     timeout: 5s
     http:
       method: GET
+    fail_if_body_matches_regexp: # 如果body匹配正则表达式则失败
+      - '"flag":false'
+    fail_if_body_not_matches_regexp: # 如果body不匹配正则表达式则失败
+      - '"code":200'
 ```
 
 ### 2,修改prometheus.yml 增加配置
