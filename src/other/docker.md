@@ -184,6 +184,17 @@ REPOSITORY           TAG             IMAGE ID       CREATED          SIZE
 mynginx              latest          c8c87fb396ce   43 seconds ago   146MB
 ```
 
+## docker 推送镜像到docker hub
+
+```bash
+# 登录
+docker login
+# 给本地镜像打上标签
+docker tag mynginx:latest 123456789/mynginx:latest
+# 推送
+docker push 123456789/mynginx:latest
+```
+
 ## docker compose
 
 :::tip 简介
