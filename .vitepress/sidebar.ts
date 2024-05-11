@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2024-05-07 11:33:13
+ * @LastEditTime: 2024-05-11 15:46:57
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -100,6 +100,9 @@
         },{
           text:"prometheus+grafana",
           link:'/other/prometheus'
+        },{
+          text:"kubesphere",
+          link:'/other/kubesphere'
         }
       ]
     }
