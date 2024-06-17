@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: 18
       - run: npm i
-      - run: npm run docs:Build
+      - run: npm run docs:build
 
   # Deployment job
   deploy:
