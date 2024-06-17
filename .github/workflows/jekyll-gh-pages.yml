@@ -32,13 +32,3 @@ jobs:
           node-version: 18
       - run: npm i
       - run: npm run docs:build
-      
-  # Deployment job
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy 🚀
-        uses: actions/deploy-pages@v4
-        with:
-          folder: docs 

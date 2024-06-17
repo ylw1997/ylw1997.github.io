@@ -3,7 +3,7 @@ layout: home
 aside: true
 hero:
   name: YLW BLOG
-  text: 技术博客,学习笔记
+  text: 技术博客,学习笔记1
   tagline: just thinking ...
   image:
     src: https://article.biliimg.com/bfs/article/b2fca8e0d573c6c4b23f8dbefc656b3bb845a6f8.png
