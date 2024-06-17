@@ -16,5 +16,11 @@
 ## 关于作者
 
 ::: tip 作者
-姓名: 杨利伟 年龄: 27 职位: 前端工程师 博客地址: <https://www.yangliwei.top/>
+姓名: 杨利伟 年龄: 27 职位: 前端工程师 博客地址:
+
+* [https://yangliwei.top](https://yangliwei.site)
+
+* <https://ylw.vercel.app/>
+
+* <https://ylw1997.github.io/>
 :::
