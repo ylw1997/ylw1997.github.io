@@ -34,15 +34,10 @@ jobs:
           node-version: 18
       - run: npm i
       - run: npm run docs:build
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.pages }} # 这一步很重要，单独看下面的大步骤，主要是用来给该脚本一些仓库权限
+          publish_dir: docs # 指定该文件夹中的 dist 
+          publish_branch: pages # 推送到关联仓库的 pages 分支
+          dotfiles: true  # 包括在提交中，即使被 .gitignore 文件忽略
