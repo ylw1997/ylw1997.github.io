@@ -189,7 +189,7 @@ kubectl get pod -n kubesphere-devops-system
 
 ![java](https://i0.hdslb.com/bfs/article/17edcdc6e3a4716c40bee551baa160e7102411794.png)
 
-```jenkinsfile
+```yaml
 pipeline {
   agent {
     node {

@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2024-05-11 15:46:57
+ * @LastEditTime: 2024-08-12 11:44:35
  * @LastEditors: yangliwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -103,6 +103,9 @@
         },{
           text:"kubesphere",
           link:'/other/kubesphere'
+        },{
+          text:'gpt',
+          link:'/other/gpt'
         }
       ]
     }
