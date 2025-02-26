@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2025-02-26 14:52:29
+ * @LastEditTime: 2025-02-26 15:23:32
  * @LastEditors: YangLiwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -22,6 +22,10 @@
         {
           text:'browser use',
           link:'/ai/browser-use'
+        },
+        {
+          text:'open-interpreter',
+          link:'/ai/open-interpreter'
         }
       ]
     }
