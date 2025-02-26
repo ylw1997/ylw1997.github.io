@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2025-02-26 15:23:32
+ * @LastEditTime: 2025-02-26 15:55:14
  * @LastEditors: YangLiwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -26,6 +26,10 @@
         {
           text:'open-interpreter',
           link:'/ai/open-interpreter'
+        },
+        {
+          text:'dify',
+          link:'/ai/dify'
         }
       ]
     }
