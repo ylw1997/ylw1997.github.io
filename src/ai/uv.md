@@ -96,7 +96,7 @@ uv pip install flask
 uv pip uninstall flask
 
 # 从项目配置安装
-uv pip install .
+uv pip install -r requirements.txt
 ```
 
 ## 依赖同步
@@ -131,9 +131,12 @@ uv sync
 > 克隆项目后
 
 ``` bash
-uv venv
-.venv\Scripts\activate
-uv sync
+cd ./你的项目文件
+uv init  # 会生成pyproject.tom、uv.lock、.python-version文件
+uv run  # 会根据.python-version中的python版本生成 .venv文件，即python虚拟环境
+
+# 将旧依赖方式同步到pyproject.toml中
+uv add -r requirements.txt
 ```
 
 ## 对比pip

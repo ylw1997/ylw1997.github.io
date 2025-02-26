@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2025-02-26 11:23:52
+ * @LastEditTime: 2025-02-26 13:50:44
  * @LastEditors: YangLiwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -16,7 +16,7 @@
           link: '/ai/uv'
         },
         {
-          text:'OmniParser',
+          text:'OmniParser V2',
           link:'/ai/omniparser'
         }
       ]
