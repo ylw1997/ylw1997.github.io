@@ -49,6 +49,7 @@ export default defineComponent({
 
 </style>
 ```
+
 ## 创建入口文件
 
 ```ts
@@ -100,6 +101,7 @@ export default defineConfig({
   },
 })
 ```
+
 ## 修改package.json
 
 ```json
@@ -126,6 +128,7 @@ export default defineConfig({
 ## ts类型
 
 :::tip ts类型
+
 * vite 有一个专门插件来解决ts类型的问题
 * [vite-plugin-dts](https://github.com/qmhc/vite-plugin-dts)
 * 一款用于在 库模式 中，从 .ts(x) 或 .vue 源文件生成类型文件（.d.ts）的 Vite 插件。
@@ -140,9 +143,8 @@ yarn add vite-plugin-dts -D
 import dts from 'vite-plugin-dts'
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(),vueJsx(),dts({
-    outputDir:"dist",
-  })],
+  // dts 插件,
+  plugins: [vue(),vueJsx(),dts({ tsconfigPath: './tsconfig.app.json' })],
   // ...
 })
 ```
@@ -152,11 +154,13 @@ export default defineConfig({
 ```bash
 yarn build
 ```
+
 ![打包后](https://article.biliimg.com/bfs/article/c019175cea7d90da5ef57cf4ac0a87c917731e23.png)
 
 ## 减小体积
 
 :::tip 减小体积
+
 * vite打包后的文件体积比较大
 
 * 可以使用rollupOptions选项中的external和manualChunks来减小体积
@@ -208,6 +212,7 @@ npm login
 ## 发布
 
 :::warning 发布
+
 * 需要先修改package.json中的版本号
 * 发布前需要先打包
 :::
@@ -256,10 +261,10 @@ import { TestBtn } from 'profield'
 
 ![img](https://article.biliimg.com/bfs/article/9f8717a2ae39deebc210761eeb8a508d5e7e9bef.png)
 
-
 ## 参考
 
 :::tip 参考
+
 * 感谢这几篇文章
 * [使用Vite和TypeScript带你从零打造一个属于自己的Vue3组件库](https://juejin.cn/post/7117886038126624805)
 * [基于vite + Vue3.2 组件开发 并发布 npm 包](https://blog.csdn.net/weixin_53312997/article/details/126631365)
