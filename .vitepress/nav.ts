@@ -1,15 +1,16 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:38:06
- * @LastEditTime: 2023-02-06 16:21:59
- * @LastEditors: yangliwei 1280426581@qq.com
- * @FilePath: /vitepress-blog/.vitepress/nav.ts
+ * @LastEditTime: 2025-02-26 11:26:27
+ * @LastEditors: YangLiwei 1280426581@qq.com
+ * @FilePath: \blog\.vitepress\nav.ts
  * @Description: 导航
  */
 
 export default [
   { text: '首页', link: '/' },
   { text: '开始', link: '/start' },
+  { text: 'AI', link: '/ai/uv' },
   { text: '前端', link: '/front/vue/tsx' },
   {
     text: '其他',

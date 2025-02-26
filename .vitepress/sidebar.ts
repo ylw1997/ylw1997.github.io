@@ -1,12 +1,27 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2024-08-12 11:44:35
- * @LastEditors: yangliwei 1280426581@qq.com
+ * @LastEditTime: 2025-02-26 11:23:52
+ * @LastEditors: YangLiwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
  */
  const a =  {
+  "/ai/":[
+    {
+      text: 'AI',
+      items: [
+        {
+          text: 'uv虚拟环境',
+          link: '/ai/uv'
+        },
+        {
+          text:'OmniParser',
+          link:'/ai/omniparser'
+        }
+      ]
+    }
+  ],
   "/other/": [
     {
       text: '其他',
