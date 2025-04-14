@@ -18,7 +18,7 @@ npm install xlsx
 
 ## 读取 XLSX 文件
 
-```javascript
+```typescript
 import * as XLSX from 'xlsx/xlsx.mjs';
 // 读取本地excel文件
 export const redXLSXFile = async (file: File) => {
@@ -76,4 +76,16 @@ Error: Cannot read properties of undefined (reading 'read') at FileReader.read
 ]
 // 当设置header:1时,导出数据格式为:
 [['a', 'b', 'c'],[1, 2, 3],[4, 5, 6]]
+```
+
+## 无法找到模块“xlsx/xlsx.mjs”的声明文件
+
+> 解决方法：在项目根目录下创建一个 `xlsx.d.ts` 文件，内容如下：
+
+```typescript
+declare module 'xlsx/xlsx.mjs' {
+  import * as XLSX from 'xlsx';
+  export = XLSX;
+}
+
 ```
