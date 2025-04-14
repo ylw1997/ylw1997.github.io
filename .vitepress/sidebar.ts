@@ -1,7 +1,7 @@
 /*
  * @Author: YangLiwei
  * @Date: 2022-08-22 09:42:22
- * @LastEditTime: 2025-02-26 15:55:14
+ * @LastEditTime: 2025-04-14 15:53:46
  * @LastEditors: YangLiwei 1280426581@qq.com
  * @FilePath: \blog\.vitepress\sidebar.ts
  * @Description: 
@@ -207,6 +207,10 @@
         },{
           text:'前端漏洞修复',
           link:'/front/other/bug'
+        },
+        {
+          text:'xlsx',
+          link:'/front/other/xlsx'
         }
       ]
     }
